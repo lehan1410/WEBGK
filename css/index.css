@@ -1,0 +1,408 @@
+
+@font-face {
+    font-family: 'Axiforma';
+    font-weight: 800;
+    src: url('../Fonts/axiforma/FontsFree-Net-Axiforma3woff2.ttf');
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    font-weight: 400;
+    src: url('../Fonts/axiforma/Axiforma-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    font-weight: 300;
+    src: url('../Fonts/axiforma/Axiforma-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    font-weight: 400;
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.eot');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.ttf');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.woff');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.woff2');
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Light.eot');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Light.eot?#iefix') format('embedded-opentype'), url('../Fonts/CreatoDisplay/CreatoDisplay-Light.woff2') format('woff2'), url('../Fonts/CreatoDisplay/CreatoDisplay-Light.woff') format('woff'), url('../Fonts/CreatoDisplay/CreatoDisplay-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.eot');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.eot?#iefix') format('embedded-opentype'), url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.woff2') format('woff2'), url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.woff') format('woff'), url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.eot');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.eot?#iefix') format('embedded-opentype'), url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.woff2') format('woff2'), url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.woff') format('woff'), url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: #425F57;
+    font-family: 'Axiforma';
+    display: flex;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Axiforma';
+    margin: 0;
+    line-height: normal;
+    font-weight: 800 !important;
+    color: #000000;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1px 1px;
+    row-gap: 90px;
+}
+
+#header {
+    margin-top: 0px;
+    position: fixed;
+    width: 100%;
+    background-color: #425F57;
+    padding-bottom: 15px;
+    opacity: 0.9;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
+}
+
+.logo {
+    margin-left: 40px;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.navbar ul { 
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.navbar li {
+    position: relative;
+    margin-right: 35px;
+}
+
+.navbar a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: 0.3s;
+    text-decoration: none;
+    font-family: 'Creato Display';
+}
+
+.navbar > ul > li > a{
+    color: #dfffff;
+}
+
+
+.navbar a i {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Font Awesome 5 Pro';
+    margin-left: 6px;
+} 
+.navbar .donation {
+    margin-right: 60px;
+    padding: 10px 30px 10px;
+    background-color: #cfff8d;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+/* dropdown */
+.navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    padding: 10px 0;
+    visibility: hidden;
+    background: #ffffff;
+    border-radius: 9px;
+    min-width: 160px;
+}
+
+.navbar .dropdown:hover>ul {
+    visibility: visible;
+}
+
+.navbar li.dropdown ul li {
+    margin-right: 0;
+    padding: 8px 20px;
+    border-left: 3px solid white;
+}
+
+.navbar li.dropdown ul li:hover {
+    background: #cfff8d;
+    border-left: 3px solid #425F57;
+}
+
+.main {
+    margin-top: 150px;
+}
+
+section {
+    display: block;
+}
+
+#hero > .wc-hero > h1{
+    color: #dfffff;
+    font-size: 52px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+#hero > .wc-hero > div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 80px;
+}
+
+#hero > .wc-hero > div > a{
+    color: black;
+    border: 1px solid #cfff8d;
+    padding: 10px 25px 6px;
+    margin-right: 30px;
+    background-color: #CFFF8D;
+    font-size: 16px;
+    font-family: 'Axiforma';
+    font-weight: 400;
+    border-radius: 30px;
+    width: fit-content;
+}
+
+#hero > .wc-hero > div > button{
+    color: white;
+    border: 1px solid #cfff8d;
+    padding: 10px 25px 6px;
+    margin-right: 30px;
+    background: none;
+    font-size: 16px;
+    font-family: 'Axiforma';
+    font-weight: 400;
+    border-radius: 30px;
+    width: fit-content;
+}
+
+#hero > div > img {
+    width: 92%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: static;
+}
+
+.about-us h2.title{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 80px;
+    font-size: 30px;
+    line-height: 40px;
+    padding-bottom: 66px;
+    text-align: center;
+    margin-top: 70px;
+    max-width: 65%;
+}
+
+
+.about-content {
+    display: flex;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center; 
+    align-items: center; 
+    padding-bottom: 85px;    
+}
+
+.about-content div {
+    float: left;
+    flex: 1;
+    margin: 0;
+    padding-right: 20px; 
+    display: block;
+}
+
+.about-content img {
+    float: right;
+    width: 85%;
+    display: block;
+}
+
+.about-content div p {
+    font-size: 16px;
+    color: #7F7F7F;
+    line-height: 26px;
+    margin: 0;
+    font-weight: 400;
+    font-family: 'Creato Display'
+}
+
+.about-content div a {
+    padding: 10px 41px 6px;
+    background-color: #CFFF8D;
+    color: #000;
+    border: 1px solid #CFFF8D;
+    font-size: 16px;
+    font-family: 'Axiforma';
+    font-weight: 400;
+    border-radius: 30px;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 44px;
+}
+
+.wc-help h2{
+    font-size: 45px;
+    text-align: center;
+    padding-top: 120px;
+}
+
+.wc-help p{
+    font-size: 16px;
+    color: #7F7F7F;
+    line-height: 26px;
+    margin: 0;
+    font-weight: 400;
+    font-family: 'Creato Display';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 43%;
+    text-align: center;
+    padding-bottom: 46px;
+}
+
+.help-event {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.help-event .img {
+    float: left;
+    display: block;
+    padding-bottom: 136px;
+}
+
+.wc-story p{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    color: #000;
+    font-weight: 800;
+    font-family: 'Axiforma';
+    line-height: 34px;
+    z-index: 1;
+}
+
+.wc-story p::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 210px;
+    height: 200px;
+    background-image: url(../images/star.png);
+    z-index: -1;
+}
+
+.help-event .para{
+    font-size: 16px;
+    color: #7F7F7F;
+    font-weight: 400;
+    font-family: 'Creato Display';
+    float: left;
+    display: block
+}
+
+.wc-timeline {
+    padding: 60px 15px;
+}
+
+.wc-timeline .timeline-title h2{
+    font-size: 50px;
+    padding-bottom: 10px;
+    color: #DFFFFF;
+}
+
+.wc-timeline .timeline-title{
+    padding-bottom: 70px;
+}
+
+.wc-timeline .timeline-title p{
+    color: #DFFFFFCC;
+    max-width: 51%;
+}
+
+.wc-latest {
+    background-color: #FFF8F8;
+    padding: 80px 0;
+    margin-bottom: 120px;
+}
+
+.wc-latest .latest-title {
+    padding-bottom: 70px;
+}
+
+.wc-latest .latest-title h2 {
+    font-size: 50px;
+}
+
+.wc-latest .latest-title p {
+    max-width: 52%;
+    font-size: 16px;
+    color: #7F7F7F;
+    line-height: 26px;
+    margin: 0;
+    font-weight: 400;
+    font-family: 'Creato Display';
+}
+
+
+
