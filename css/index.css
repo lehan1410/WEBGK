@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Axiforma';
     font-weight: 800;
@@ -54,10 +53,14 @@
 }
 
 body {
-    background-color: #425F57;
+    /* background-color: #425F57; */
     font-family: 'Axiforma';
     display: flex;
     margin: 0;
+}
+
+#hero {
+    background: #425F57;
 }
 
 h1,
@@ -102,7 +105,7 @@ body {
     padding-top: 10px;
 }
 
-.navbar ul { 
+.navbar ul {
     display: flex;
     list-style: none;
     align-items: center;
@@ -129,7 +132,7 @@ body {
     font-family: 'Creato Display';
 }
 
-.navbar > ul > li > a{
+.navbar>ul>li>a {
     color: #dfffff;
 }
 
@@ -139,7 +142,8 @@ body {
     font-weight: 600;
     font-family: 'Font Awesome 5 Pro';
     margin-left: 6px;
-} 
+}
+
 .navbar .donation {
     margin-right: 60px;
     padding: 10px 30px 10px;
@@ -175,27 +179,27 @@ body {
 }
 
 .main {
-    margin-top: 150px;
+    margin-top: 84px;
 }
 
 section {
     display: block;
 }
 
-#hero > .wc-hero > h1{
+#hero>.wc-hero>h1 {
     color: #dfffff;
     font-size: 52px;
     padding-bottom: 40px;
     text-align: center;
 }
 
-#hero > .wc-hero > div {
+#hero>.wc-hero>div {
     display: flex;
     justify-content: center;
     padding-bottom: 80px;
 }
 
-#hero > .wc-hero > div > a{
+#hero>.wc-hero>div>a {
     color: black;
     border: 1px solid #cfff8d;
     padding: 10px 25px 6px;
@@ -208,7 +212,7 @@ section {
     width: fit-content;
 }
 
-#hero > .wc-hero > div > button{
+#hero>.wc-hero>div>button {
     color: white;
     border: 1px solid #cfff8d;
     padding: 10px 25px 6px;
@@ -221,7 +225,7 @@ section {
     width: fit-content;
 }
 
-#hero > div > img {
+#hero>div>img {
     width: 92%;
     display: block;
     margin-left: auto;
@@ -229,7 +233,7 @@ section {
     position: static;
 }
 
-.about-us h2.title{
+.about-us h2.title {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -248,16 +252,16 @@ section {
     max-width: 70%;
     margin-left: auto;
     margin-right: auto;
-    justify-content: center; 
-    align-items: center; 
-    padding-bottom: 85px;    
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 85px;
 }
 
 .about-content div {
     float: left;
     flex: 1;
     margin: 0;
-    padding-right: 20px; 
+    padding-right: 20px;
     display: block;
 }
 
@@ -292,13 +296,13 @@ section {
     margin-top: 44px;
 }
 
-.wc-help h2{
+.wc-help h2 {
     font-size: 45px;
     text-align: center;
     padding-top: 120px;
 }
 
-.wc-help p{
+.wc-help p {
     font-size: 16px;
     color: #7F7F7F;
     line-height: 26px;
@@ -318,8 +322,8 @@ section {
     padding-right: 20px;
     padding-bottom: 50px;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
 .help-event .img {
@@ -328,7 +332,7 @@ section {
     padding-bottom: 136px;
 }
 
-.wc-story p{
+.wc-story p {
     position: relative;
     display: flex;
     align-items: center;
@@ -342,7 +346,7 @@ section {
     z-index: 1;
 }
 
-.wc-story p::before{
+.wc-story p::before {
     content: '';
     display: block;
     position: absolute;
@@ -352,7 +356,7 @@ section {
     z-index: -1;
 }
 
-.help-event .para{
+.help-event .para {
     font-size: 16px;
     color: #7F7F7F;
     font-weight: 400;
@@ -365,25 +369,26 @@ section {
     padding: 60px 15px;
 }
 
-.wc-timeline .timeline-title h2{
+.wc-timeline .timeline-title h2 {
     font-size: 50px;
     padding-bottom: 10px;
     color: #DFFFFF;
 }
 
-.wc-timeline .timeline-title{
+.wc-timeline .timeline-title {
     padding-bottom: 70px;
 }
 
-.wc-timeline .timeline-title p{
+.wc-timeline .timeline-title p {
     color: #DFFFFFCC;
     max-width: 51%;
 }
 
 .wc-latest {
     background-color: #FFF8F8;
-    padding: 80px 0;
+    padding: 10px 30px;
     margin-bottom: 120px;
+    /* position: relative; */
 }
 
 .wc-latest .latest-title {
@@ -404,5 +409,226 @@ section {
     font-family: 'Creato Display';
 }
 
+.wc-latest .single-cause-item {
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    padding-left: 100px;
+    margin-left: 100px;
+    padding-top: 40px;
+}
 
+.cause-content {
+    /* max-width: 50%; */
+    text-align: right;
+}
 
+.latest-image-content {
+    max-width: 40%;
+}
+
+.wc-latest .single-cause-item .cause-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+}
+
+.wc-latest .single-cause-item .cause-content {
+    max-width: 500px;
+    padding-bottom: 50px;
+}
+
+.wc-latest .single-cause-item .cause-content:last-child {
+    padding-bottom: 7px;
+}
+
+.wc-latest .single-cause-item h2 {
+    font-size: 20px;
+}
+
+.wc-latest .ab {
+    display: flex;
+}
+
+.wc-latest a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.wc-latest .latest-image-content p.date {
+    color: #425F57;
+    font-family: 'Axiforma';
+}
+
+.wc-latest .latest-image-content h2,
+a:hover {
+    color: #557571;
+}
+
+.wc-chariti {
+    padding-bottom: 140px;
+    
+    /* position: relative;
+    background-color: transparent; */
+}
+
+.wc-chariti .charities-img {
+    /* position: relative; */
+    /*  */
+    overflow: hidden;
+}
+
+.wc-chariti > .project-img {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.latest-news{
+    text-align: center;
+    border: #425F57;
+    border-radius: 50px;
+}
+.contactus {
+    background-color: #fff8f8;
+    border-radius: 20px;
+}
+
+.contact-title h2 {
+    font-size: 50px;
+    font-family: 'Axiforma';
+    text-align: center;
+    padding: 35px;
+}
+
+.contact-title p {
+    font-size: 16px;
+    font-family: 'Creato Display';
+    text-align: center;
+    color: #7f7f7f;
+    justify-content: center;
+    max-width: 33%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 836px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.contact-form .nema-and-number,
+.contact-form .email-and-submit {
+    display: flex;
+    grid-gap: 22px;
+    margin-bottom: 24px;
+}
+
+.contact-form .form-control {
+    min-height: 50px;
+    border-radius: 50px;
+    background-image: none;
+    font-size: 16px;
+    color: #7F7F7F;
+    font-family: 'Creato Display';
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding-left: 20px;
+}
+
+.form-control:focus {
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid #000;
+}
+
+.contact-form textarea.form-control {
+    min-height: 120px;
+    border-radius: 39px;
+    margin-bottom: 25px;
+}
+
+.contact-form .contact-form-button {
+    text-align: center;
+}
+
+.contact-form .contact-form-button .btn {
+    font-size: 22px;
+    padding: 13px 77px 10px;
+    font-family: 'Axiforma';
+    background: #cfff8d;
+    border-radius: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #425F57;
+    padding: 75px 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    margin-top: 300px;
+}
+
+.footer a.logo {
+    max-width: 280px;
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content img {
+    padding-bottom: 40px;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    color: #DFFFFFCC;
+    max-width: 26%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.footer-copyright {
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+.social-icon a {
+    background: rgba(207, 255, 141, 0.2);
+    border-radius: 6px;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #CFFF8D;
+    font-size: 18px;
+    margin-right: 18px;
+    text-decoration: none;
+}
+
+.footer .social-icon a:hover {
+    background-color: #CFFF8D;
+    color: #000;
+}
+
+.footer-copyright a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    font-family: 'Creato Display';
+    text-decoration: none;
+}
+
+.footer .footer-copyright a:hover {
+    color: #CFFF8D;
+}
