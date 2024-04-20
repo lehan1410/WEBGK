@@ -19,27 +19,27 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <a href="index.html"><img src="images/black-logo.png" alt="../"></a>
+                    <a href="index.php"><img src="images/black-logo.png" alt="../"></a>
                 </div>
                 <ul>
-                    <li><a class="one" href="help-me.html">Help me </a></li>
-                    <li><a class="one" href="about-us.html">About us</a></li>
-                    <li><a class="one" href="donation.html" style="font-weight: 600;">Donation</a>
+                    <li><a class="one" href="help-me.php">Help me </a></li>
+                    <li><a class="one" href="about-us.php">About us</a></li>
+                    <li><a class="one" href="donation.php" style="font-weight: 600;">Donation</a>
                     </li>
-                    <li><a class="one" href="news.html">News</a></li>
-                    <li><a class="one" href="contact.html">Contact us</a></li>
+                    <li><a class="one" href="news.php">News</a></li>
+                    <li><a class="one" href="contact.php">Contact us</a></li>
                     <li class="dropdown">
                         <a href="#"><span>Pages</span>
                             <i class="fa fa-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a href="donation-form.html">Donation Form</a></li>
-                            <li><a href="donation-success.html">Donation Success</a></li>
+                            <li><a href="donation-form.php">Donation Form</a></li>
+                            <li><a href="donation-success.php">Donation Success</a></li>
                         </ul>
                     </li>
                 </ul>
                 <div class="wc-btn">
-                    <a href="donation.html" class="btn btn-primary">Donate</a>
+                    <a href="donation.php" class="btn btn-primary">Donate</a>
                 </div>
             </nav>
         </div>
@@ -194,7 +194,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <a href="index.html"><img src="images/footer-logo.png" alt="../"></a>
+                <a href="index.php"><img src="images/footer-logo.png" alt="../"></a>
                 <P>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
                     necessary</P>
                 <div class="footer-copyright"><a href="#" style="margin-right: 10px;">@ 2022 Donation
