@@ -15,8 +15,8 @@
             $result = checkUser1($name, $email);
             if ($result==FALSE and $pass1 == $pass2) {
                 $conn = get_connection();
-                $stmt = $conn->prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?)");
-                $stmt->bind_param("sss", $name, $email, $pass1);
+                $stmt = $conn->prepare("INSERT INTO user (name, email, password, code) VALUES (?, ?, ?, ?)");
+                $stmt->bind_param("ssss", $name, $email, $pass1, 0);
                 $stmt->execute();
                 header('Location: \WEBGK\view\login.php');
             }else {
@@ -32,7 +32,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Registration form in HTML CSS </title>
+    <title> Registration</title>
     <link rel="stylesheet" href="\WEBGK\css\registration.css">
 </head>
 

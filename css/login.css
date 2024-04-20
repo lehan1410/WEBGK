@@ -116,17 +116,21 @@ a{
     transition: 0.3s ease;
     text-align: center;
 }
-/* p.account {
+p.account a {
     color: #4e34b6;
-} */
+}
+
+p.forgot a {
+    color: #4e34b6;
+}
 p.account a:hover{
  text-decoration: underline;
 }
 
-.content .forgot {
-    color: red;
-    /* color:#4e34b6; */
-}
+/* .content .forgot {
+    color: black;
+    color:#4e34b6;
+} */
 
 @media(max-width:736px){
     .login-form .main{
