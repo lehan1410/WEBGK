@@ -15,8 +15,8 @@
             $result = checkUser1($name, $email);
             if ($result==FALSE and $pass1 == $pass2) {
                 $conn = get_connection();
-                $stmt = $conn->prepare("INSERT INTO user (name, email, password, code) VALUES (?, ?, ?, ?)");
-                $stmt->bind_param("ssss", $name, $email, $pass1, 0);
+                $stmt = $conn->prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?)");
+                $stmt->bind_param("sss", $name, $email, $pass1);
                 $stmt->execute();
                 header('Location: \WEBGK\view\login.php');
             }else {

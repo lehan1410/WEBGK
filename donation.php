@@ -1,3 +1,43 @@
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+require '../vendor/phpmailer/phpmailer/src/SMTP.php';
+require '../vendor/autoload.php'; 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $email = $_POST['email'];
+        include "..\model\connect.php";
+        include "..\model\user.php";
+        $mail = new PHPMailer(); 
+        $conn = get_connection();
+        $email = mysqli_real_escape_string($conn, $email);
+        $check_email = "SELECT * FROM user WHERE email='$email'";
+        $run_sql = mysqli_query($conn, $check_email);
+        if(mysqli_num_rows($run_sql) > 0){
+            $code = rand(999999, 111111);
+            $insert_code = "UPDATE user SET code = $code WHERE email = '$email'";
+            $run_query =  mysqli_query($conn, $insert_code);
+            if($run_query){
+                $mail->SMTPDebug = 0;  
+                $mail->Mailer = "smtp"; 
+                $mail->isSMTP();                          
+                $mail->Host = 'smtp.gmail.com';            
+                $mail->SMTPAuth = true;                     
+                $mail->Username = '52200155@student.tdtu.edu.vn';                 
+                $mail->Password = 'eags pwty jjij hsuq';       
+                $mail->SMTPSecure = 'tls';                  
+                $mail->Port = 587;
+                $mail->setFrom('52200155@student.tdtu.edu.vn', 'WEBGK-N11');
+                $mail->addAddress($email);    
+                $mail->isHTML(true);                                  
+                $mail->Subject = 'Password Reset Code';
+                $mail->Body    = "Your password reset code is $code";
+                $mail->send(); 
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -180,7 +220,7 @@
                             </div>
                             <textarea class="form-control" placeholder="Message"></textarea>
                             <div class="contact-form-button">
-                                <input type="submit" class="btn btn-primary" value="Send">
+                                <input type="submit" class="btn btn-primary" name="send" value="Send">
                             </div>
                         </form>
                     </div>
@@ -211,40 +251,7 @@
     </footer>
     <!-- <!=== End-footer-section =====> -->
     </div>
-    <script>
-    document.getElementById("c").addEventListener("submit", function(event) {
-        var firstName = document.getElementsByName("lname")[0].value;
-        var lastName = document.getElementsByName("fname")[0].value;
-        var email = document.getElementsByName("email")[0].value;
 
-        if (firstName === "") {
-            alert("Please enter your first name");
-            event.preventDefault();
-            return false;
-        }
-        if (lastName === "") {
-            alert("Please enter your last name");
-            event.preventDefault();
-            return false;
-        }
-        if (email === "") {
-            alert("Please enter your email address");
-            event.preventDefault();
-            return false;
-        }
-        if (!validateEmail(email)) {
-            alert("Please enter a valid email address");
-            event.preventDefault();
-            return false;
-        }
-    });
-
-    function validateEmail(email) {
-        // Regular expression to validate email address
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-    </script>
 </body>
 
 </html>

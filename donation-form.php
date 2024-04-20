@@ -13,17 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <!-- <link rel="stylesheet" href="css/aos.css" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/magnific-popup.css" />
-    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/jquery-ui.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <aoc animation -->
-    <!-- <link href="css/aos.css" rel="stylesheet" /> -->
-
     <!-- Template Main CSS File -->
     <link href="css/donation-form.css" rel="stylesheet" />
 </head>
