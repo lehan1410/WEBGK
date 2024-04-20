@@ -8,10 +8,10 @@ function checkUser($name, $pass) {
     $rowCount = $result->num_rows;
     return $rowCount > 0;
 }   
-function checkUser1($name, $pass, $email) {
+function checkUser1($name, $email) {
     $conn = get_connection();
-    $stmt = $conn->prepare("SELECT * FROM user WHERE name = ? AND password = ? AND email = ?");
-    $stmt->bind_param("sss", $name, $pass, $email);
+    $stmt = $conn->prepare("SELECT * FROM user WHERE name = ?  AND email = ?");
+    $stmt->bind_param("ss", $name, $email);
     $stmt->execute();
     $result = $stmt->get_result();
     $rowCount = $result->num_rows;
