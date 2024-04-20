@@ -1,42 +1,39 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
 
-require '../vendor/phpmailer/phpmailer/src/SMTP.php';
-require '../vendor/autoload.php'; 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST['email'];
-        include "..\model\connect.php";
-        include "..\model\user.php";
-        $mail = new PHPMailer(); 
-        $conn = get_connection();
-        $email = mysqli_real_escape_string($conn, $email);
-        $check_email = "SELECT * FROM user WHERE email='$email'";
-        $run_sql = mysqli_query($conn, $check_email);
-        if(mysqli_num_rows($run_sql) > 0){
-            $code = rand(999999, 111111);
-            $insert_code = "UPDATE user SET code = $code WHERE email = '$email'";
-            $run_query =  mysqli_query($conn, $insert_code);
-            if($run_query){
-                $mail->SMTPDebug = 0;  
-                $mail->Mailer = "smtp"; 
-                $mail->isSMTP();                          
-                $mail->Host = 'smtp.gmail.com';            
-                $mail->SMTPAuth = true;                     
-                $mail->Username = '52200155@student.tdtu.edu.vn';                 
-                $mail->Password = 'eags pwty jjij hsuq';       
-                $mail->SMTPSecure = 'tls';                  
-                $mail->Port = 587;
-                $mail->setFrom('52200155@student.tdtu.edu.vn', 'WEBGK-N11');
-                $mail->addAddress($email);    
-                $mail->isHTML(true);                                  
-                $mail->Subject = 'Password Reset Code';
-                $mail->Body    = "Your password reset code is $code";
-                $mail->send(); 
-            }
-        }
+require 'vendor/autoload.php';
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+
+    $mail = new PHPMailer();
+    try {
+        //Server settings
+        $mail->SMTPDebug = 0;                                 
+        $mail->isSMTP();                                      
+        $mail->Host = 'smtp.gmail.com';  
+        $mail->SMTPAuth = true;                               
+        $mail->Username = '52200155@student.tdtu.edu.vn';                 
+        $mail->Password = 'eags pwty jjij hsuq';                           
+        $mail->SMTPSecure = 'tls';                            
+        $mail->Port = 587;                                    
+
+        //Recipients
+        $mail->setFrom('52200155@student.tdtu.edu.vn', 'WEBGK-N11');
+        $mail->addAddress($email, $name);     
+
+        //Content
+        $mail->isHTML(true);                                  
+        $mail->Subject = 'Confirmation of Contact Form Submission';
+        $mail->Body    = "Dear $name,<br><br>Thank you for your submission.<br><br>Best regards,<br>Group 11";
+        $mail->send();
+    } catch (Exception $e) {
+        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -209,7 +206,8 @@ require '../vendor/autoload.php';
                             cumque</p>
                     </div>
                     <div class="contact-form">
-                        <form id="contactform" method="post" action="contact.php">
+                        <form id="contactform" method="post"
+                            action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                             <div class="nema-and-number">
                                 <input type="text" class="form-control" name="name" placeholder="First name">
                                 <input type="email" class="form-control" name="email" placeholder="Email">
