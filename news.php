@@ -19,27 +19,27 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <a href="index.html"><img src="images/black-logo.png" alt="../"></a>
+                    <a href="index.php"><img src="images/black-logo.png" alt="../"></a>
                 </div>
                 <ul>
-                    <li><a class="one" href="help-me.html">Help me </a></li>
-                    <li><a class="one" href="about-us.html">About us</a></li>
-                    <li><a class="one" href="donation.html" >Donation</a>
+                    <li><a class="one" href="help-me.php">Help me </a></li>
+                    <li><a class="one" href="about-us.php">About us</a></li>
+                    <li><a class="one" href="donation.php" >Donation</a>
                     </li>
-                    <li><a class="one" href="news.html" style="font-weight: 600;">News</a></li>
-                    <li><a class="one" href="contact.html">Contact us</a></li>
+                    <li><a class="one" href="news.php" style="font-weight: 600;">News</a></li>
+                    <li><a class="one" href="contact.php">Contact us</a></li>
                     <li class="dropdown">
                         <a href="#"><span>Pages</span>
                             <i class="fa fa-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a href="donation-form.html">Donation Form</a></li>
-                            <li><a href="donation-success.html">Donation Success</a></li>
+                            <li><a href="donation-form.php">Donation Form</a></li>
+                            <li><a href="donation-success.php">Donation Success</a></li>
                         </ul>
                     </li>
                 </ul>
                 <div class="wc-btn">
-                    <a href="donation.html" class="btn btn-primary">Donate</a>
+                    <a href="donation.php" class="btn btn-primary">Donate</a>
                 </div>
             </nav>
         </div>
@@ -60,45 +60,45 @@
                     </div>
                     <div class="news-wrapper">
                         <div class="news-content">
-                            <a href="news-details.html"><img src="images/news-1.png" alt="../"></a>
+                            <a href="news-details.php"><img src="images/news-1.png" alt="../"></a>
                             <p>10 jun,2022</p>
-                            <a href="news-details.html"> </a>
-                            <h2><a href="news-details.html">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                            <a href="news-details.php"> </a>
+                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
                                     reiciendis</a></h2>
                         </div>
                         <div class="news-content">
-                            <a href="news-details.html"><img src="images/news-2.png" alt="../"></a>
+                            <a href="news-details.php"><img src="images/news-2.png" alt="../"></a>
                             <p>10 jun,2022</p>
-                            <a href="news-details.html"></a>
-                            <h2><a href="news-details.html">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                            <a href="news-details.php"></a>
+                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
                                     reiciendis</a></h2>
                         </div>
                         <div class="news-content">
-                            <a href="news-details.html"><img src="images/news-3.png" alt="../"></a>
+                            <a href="news-details.php"><img src="images/news-3.png" alt="../"></a>
                             <p>10 jun,2022</p>
-                            <a href="news-details.html"></a>
-                            <h2><a href="news-details.html">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                            <a href="news-details.php"></a>
+                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
                                     reiciendis</a></h2>
                         </div>
                         <div class="news-content">
-                            <a href="news-details.html"><img src="images/news-4.png" alt="../"></a>
+                            <a href="news-details.php"><img src="images/news-4.png" alt="../"></a>
                             <p>10 jun,2022</p>
-                            <a href="news-details.html"></a>
-                            <h2><a href="news-details.html">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                            <a href="news-details.php"></a>
+                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
                                     reiciendis</a></h2>
                         </div>
                         <div class="news-content">
-                            <a href="news-details.html"><img src="images/news-5.png" alt="../"></a>
+                            <a href="news-details.php"><img src="images/news-5.png" alt="../"></a>
                             <p>10 jun,2022</p>
-                            <a href="news-details.html"></a>
-                            <h2><a href="news-details.html">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                            <a href="news-details.php"></a>
+                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
                                     reiciendis</a></h2>
                         </div>
                         <div class="news-content">
-                            <a href="news-details.html"><img src="images/news-6.png" alt="../"></a>
+                            <a href="news-details.php"><img src="images/news-6.png" alt="../"></a>
                             <p>10 jun,2022</p>
-                            <a href="news-details.html"></a>
-                            <h2><a href="news-details.html">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                            <a href="news-details.php"></a>
+                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
                                     reiciendis</a></h2>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <a href="index.html"><img src="images/footer-logo.png" alt="../"></a>
+                <a href="index.php"><img src="images/footer-logo.png" alt="../"></a>
                 <P>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
                     necessary</P>
                 <div class="footer-copyright"><a href="#" style="margin-right: 10px;">@ 2022 Donation

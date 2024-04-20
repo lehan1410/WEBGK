@@ -1,0 +1,579 @@
+@font-face {
+    font-family: 'Axiforma';
+    font-weight: 800;
+    src: url('../Fonts/axiforma/FontsFree-Net-Axiforma3woff2.ttf');
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    font-weight: 400;
+    src: url('../Fonts/axiforma/Axiforma-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    font-weight: 300;
+    src: url('../Fonts/axiforma/Axiforma-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    font-weight: 400;
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.eot');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.ttf');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.woff');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.woff2');
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Light.eot');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Light.eot?#iefix') format('embedded-opentype'), url('../Fonts/CreatoDisplay/CreatoDisplay-Light.woff2') format('woff2'), url('../Fonts/CreatoDisplay/CreatoDisplay-Light.woff') format('woff'), url('../Fonts/CreatoDisplay/CreatoDisplay-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.eot');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.eot?#iefix') format('embedded-opentype'), url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.woff2') format('woff2'), url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.woff') format('woff'), url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.eot');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.eot?#iefix') format('embedded-opentype'), url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.woff2') format('woff2'), url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.woff') format('woff'), url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+    font-family: 'Axiforma';
+    display: flex;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Axiforma';
+    margin: 0;
+    line-height: normal;
+    font-weight: 800 !important;
+    color: #000000;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1px 1px;
+    row-gap: 90px;
+}
+
+#header {
+    margin-top: 0px;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    padding-bottom: 15px;
+    opacity: 0.9;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 999;
+    background: #ffffff;
+}
+
+.logo {
+    margin-left: 40px;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.navbar li {
+    position: relative;
+    margin-right: 35px;
+}
+
+.navbar a {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: 0.3s;
+    text-decoration: none;
+    font-family: 'Creato Display';
+}
+
+.navbar>ul>li>a {
+    color: #000000;
+}
+
+.navbar a i {
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Font Awesome 5 Pro';
+    margin-left: 6px;
+}
+
+.navbar ul a:hover{
+    color: #769593
+}
+
+.navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    padding: 10px 0;
+    visibility: hidden;
+    background: #ffffff;
+    border-radius: 9px;
+    min-width: 160px;
+}
+
+.navbar .dropdown:hover>ul {
+    visibility: visible;
+}
+
+.navbar li.dropdown ul li {
+    margin-right: 0;
+    padding: 8px 20px;
+    border-left: 3px solid white;
+}
+
+.navbar li.dropdown ul li:hover {
+    background: #cfff8d;
+    border-left: 3px solid #4b425f;
+}
+
+.navbar .wc-btn .btn {
+    padding: 10px 30px 6px;
+    font-family: 'Axiforma';
+    font-weight: 400 !important;
+    margin-right: 60px;
+}
+
+.navbar .wc-btn .btn-primary {
+    color: #000 !important;
+    background: #CFFF8D;
+    border-radius: 20px;
+}
+
+.transperent .navbar .wc-btn .btn-primary:hover {
+    color: #fff !important;
+    border: 2px solid #CFFF8D;
+}
+
+.navbar .wc-btn .btn-primary:hover {
+    color: #000 !important;
+    border: 2px solid #000000;
+    background-color: transparent !important;
+}
+
+.navbar .wc-btn .btn-primary:active,
+.navbar .wc-btn .btn-primary:focus {
+    background-color: transparent;
+    border-color: #000000;
+}
+
+
+.main {
+    margin-top: 84px;
+}
+
+.page{
+    background-color: white;
+}
+
+section {
+    display: block;
+}
+
+.wc-about-us .wc-about-bg {
+    background-repeat: no-repeat;
+    width: 90%;
+    min-height: 700px;
+    padding: 50px; 
+    background-size: cover;
+    display: block; 
+    margin: 0 auto; 
+    margin-top: 10px;
+}
+
+.wc-about-us .wc-about-bg h2 {
+    font-size: 60px;
+    position: relative;
+    left: 50%;
+    max-width: 40%;
+    padding: 20px;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+.about-us{
+    background-color: #fdf8f8;
+}
+
+.about-us .container{
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.about-us .container h2 {
+    padding: 20px;
+    color: black;
+    font-size: 35px;
+    line-height: 40px;
+    padding-bottom: 66px;
+    text-align: center;
+    margin-top: 70px;
+    max-width: 100%;
+}
+
+.about-us .about-content p {
+    padding-bottom: 15px;
+    max-width: 90%;
+}
+
+p {
+    font-size: 16px;
+    color: #7F7F7F;
+    line-height: 26px;
+    margin: 0;
+    font-weight: 400;
+    font-family: 'Creato Display';
+}
+
+.about-content {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0 auto; 
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+.about-content .left-content {
+    flex: 1; 
+    padding-right: 65px; 
+    box-sizing: border-box; 
+}
+
+.about-content .right-content {
+    flex: 1; 
+    padding-left: 20px;
+    width: 50%;
+    box-sizing: border-box; 
+}
+
+
+.about-content .right-content img {
+    width: 80%; 
+    height: auto; 
+    object-fit: cover; 
+}
+
+.what-we .wc-what-we h2{
+    font-size: 45px;
+    text-align: center;
+    padding: 50px;
+}
+
+.what-we .wc-what-we p{
+    max-width: 40%;
+    padding-bottom: 15px;
+    font-size: 16px;
+    color: #7F7F7F;
+    margin: auto;
+    font-weight: 400;
+}
+
+.main-wc-what .container{
+    max-width: 80%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+    box-sizing: border-box; 
+}
+
+.main-wc-what .left-content{
+    flex: 1; 
+    padding-left: 100px;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+.main-wc-what .left-content img {
+    width: 80%; 
+    height: auto; 
+    padding-right: 5px;
+}
+
+.main-wc-what .right-content{
+    padding: 20px;
+    font-size: 10px;
+    flex: 1; 
+    width: 80%;
+    box-sizing: border-box; 
+}
+
+.project-img {
+    padding: 100px 20px 0px 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 0px; 
+    justify-content: center; 
+}
+
+.charities-img {
+    width: 100%; 
+    height: 100%; 
+}
+
+.charities-img img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.wc-contactus{
+    padding: 50px;
+}
+
+.wc-contactus .wc-contact{
+    background-color: #fff8f8;
+    border-radius: 20px;
+}
+
+.contact-title h2 {
+    font-size: 50px;
+    font-family: 'Axiforma';
+    text-align: center;
+    padding: 35px;
+}
+
+.contact-title p {
+    font-size: 16px;
+    font-family: 'Creato Display';
+    text-align: center;
+    color: #7f7f7f;
+    justify-content: center;
+    max-width: 33%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 836px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.contact-form .name-and-number,
+.contact-form .email-and-submit {
+    display: flex;
+    grid-gap: 22px;
+    margin-bottom: 24px;
+}
+
+.contact-form .form-control {
+    min-height: 50px;
+    border-radius: 50px;
+    background-image: none;
+    font-size: 16px;
+    color: #7F7F7F;
+    font-family: 'Creato Display';
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding-left: 20px;
+}
+
+.form-control:focus {
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid #000;
+}
+
+.contact-form textarea.form-control {
+    min-height: 120px;
+    border-radius: 39px;
+    margin-bottom: 25px;
+    padding-top: 10px;
+}
+
+.contact-form .contact-form-button {
+    text-align: left;
+}
+
+.contact-form .contact-form-button .btn {
+    font-size: 22px;
+    padding: 13px 77px 10px;
+    font-family: 'Axiforma';
+    background: #cfff8d;
+    border-radius: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+.wc-contactus .wc-contact .container .btn-primary:hover{
+    background-color: #4c5e57;
+}
+
+footer {
+    background-color: #425F57;
+    padding: 75px 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    margin-top: 300px;
+}
+
+.footer a.logo {
+    max-width: 280px;
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content img {
+    padding-bottom: 40px;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    color: #DFFFFFCC;
+    max-width: 26%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.footer-copyright {
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+.social-icon a {
+    background: rgba(207, 255, 141, 0.2);
+    border-radius: 6px;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #CFFF8D;
+    font-size: 18px;
+    margin-right: 18px;
+    text-decoration: none;
+}
+
+.footer .social-icon a:hover {
+    background-color: #CFFF8D;
+    color: #000;
+}
+
+.footer-copyright a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    font-family: 'Creato Display';
+    text-decoration: none;
+}
+
+.footer .footer-copyright a:hover {
+    color: #CFFF8D;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        justify-content: space-around;
+        display: none; 
+    }
+
+    .wc-about-bg {
+        background-size: cover;
+    }
+
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar ul {
+        justify-content: space-around; 
+        display: none; 
+    }
+
+    .about-content {
+        display: flex; 
+        gap: 40px; 
+    }
+
+    .left-content {
+        flex: 1; 
+    }
+
+    .right-content {
+        flex: 1; 
+    }
+
+    .wc-what-we {
+        max-width: 960px; 
+        margin: 0 auto; 
+    }
+
+    .main-wc-what {
+        display: flex;
+        gap: 40px; 
+        align-items: center; 
+    }
+}
+
+@media (min-width: 1025px) {
+    .navbar ul {
+        justify-content: space-around;
+    }
+
+    .wc-chariti {
+        padding-right: 15px; 
+        padding-left: 15px;
+    }
+}

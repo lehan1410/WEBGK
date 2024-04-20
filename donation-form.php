@@ -7,20 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- siteicons -->
     <link href="images/Site-logo.png" rel="icon">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+    <link href="css/donation.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- Template Main CSS File -->
     <link href="css/donationForm.css" rel="stylesheet">
@@ -33,26 +22,26 @@
         <div class="container">
             <nav id="navbar" class="navbar">
                 <div class="logo">
-                    <a href="index.html"><img src="images/black-logo.png" alt="../"></a>
+                    <a href="index.php"><img src="images/black-logo.png" alt="../"></a>
                 </div>
                 <ul>
-                    <li><a class="one" href="help-me.html">Help me </a></li>
-                    <li><a class="one" href="about-us.html">About us</a></li>
-                    <li><a class="one" href="donation.html" style="font-weight: 600;">Donation</a></li>
-                    <li><a class="one" href="news.html">News</a></li>
-                    <li><a class="one" href="portfolio.html">Portfolio</a></li>
-                    <li><a class="one" href="contact.html">Contact us</a></li>
+                    <li><a class="one" href="help-me.php">Help me </a></li>
+                    <li><a class="one" href="about-us.php">About us</a></li>
+                    <li><a class="one" href="donation.php" style="font-weight: 600;">Donation</a></li>
+                    <li><a class="one" href="news.php">News</a></li>
+                    <li><a class="one" href="portfolio.php">Portfolio</a></li>
+                    <li><a class="one" href="contact-us.php">Contact us</a></li>
                     <li class="dropdown one"><a href="#"><span>Pages</span> <i class="fa fa-chevron-down"></i></a>
                         <ul>
-                            <li><a href="donation-form.html">Donation Form</a></li>
-                            <li><a href="donation-success.html">Donation Success</a></li>
-                            <li><a href="news-details.html">News Details</a></li>
-                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                            <li><a href="donation-form.php">Donation Form</a></li>
+                            <li><a href="donation-success.php">Donation Success</a></li>
+                            <li><a href="news-details.php">News Details</a></li>
+                            <li><a href="portfolio-details.php">Portfolio Details</a></li>
                         </ul>
                     </li>
                 </ul>
                 <div class="donation">
-                    <a href="donation.html" class="">Donate</a>
+                    <a href="donation.php" class="">Donate</a>
                 </div>
             </nav>
         </div>
