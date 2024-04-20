@@ -166,18 +166,20 @@
                                 nobis est eligendi optio cumque</p>
                         </div>
                         <div class="contact-form">
-                            <div class="name-and-number">
-                                <input type="text" class="form-control" name="name" placeholder="First name">
-                                <input type="email" class="form-control" name="Your email" placeholder="Email">
-                            </div>
-                            <div class="email-and-submit">
-                                <input type="text" class="form-control" name="number" placeholder="Phone">
-                                <input type="text" class="form-control" name="Subject" placeholder="Subject">
-                            </div>
-                            <textarea class="form-control" placeholder="Message"></textarea>
-                            <div class="contact-form-button">
-                                <a href="javascript:;" class="btn btn-primary">Send</a>
-                            </div>
+                            <form id="contactform" method="post" action="contact.php">
+                                <div class="name-and-number">
+                                    <input type="text" class="form-control" name="name" placeholder="First name">
+                                    <input type="email" class="form-control" name="email" placeholder="Email">
+                                </div>
+                                <div class="email-and-submit">
+                                    <input type="text" class="form-control" name="number" placeholder="Phone">
+                                    <input type="text" class="form-control" name="subject" placeholder="Subject">
+                                </div>
+                                <textarea class="form-control" placeholder="Message"></textarea>
+                                <div class="contact-form-button">
+                                    <input type="submit" class="btn btn-primary" value="Send">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </section>
