@@ -27,7 +27,6 @@
                     <li><a class="one" href="about-us.php">About us</a></li>
                     <li><a class="one" href="donation.php" style="font-weight: 600;">Donation</a></li>
                     <li><a class="one" href="news.php">News</a></li>
-                    <li><a class="one" href="contact.php">Contact us</a></li>
                     <li class="dropdown one"><a href="#"><span>Pages</span> <i class="fa fa-chevron-down"></i></a>
                         <ul>
                             <li><a href="donation-form.php">Donation Form</a></li>

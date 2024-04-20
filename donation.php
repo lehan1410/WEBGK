@@ -27,7 +27,6 @@
                     <li><a class="one" href="donation.php" style="font-weight: 600;">Donation</a>
                     </li>
                     <li><a class="one" href="news.php">News</a></li>
-                    <li><a class="one" href="contact.php">Contact us</a></li>
                     <li class="dropdown">
                         <a href="#"><span>Pages</span>
                             <i class="fa fa-chevron-down"></i>
@@ -81,15 +80,16 @@
                             </label>
                         </div>
                     </div>
-                    <div class="personal-info">
+                    <div class="personal-info" id="c">
                         <h4>Personal info</h4>
                         <div class="info">
-                            <input type="text" class="form-control" name="name" placeholder="First name">
-                            <input type="text" class="form-control" name="number" placeholder="Last name">
+                            <input type="text" class="form-control" name="fname" placeholder="First name">
+                            <input type="text" class="form-control" name="lname" placeholder="Last name">
                         </div>
                         <input type="email" class="form-control" name="email" placeholder="Email Address">
                         <div class="btn-text">Donation Total: 25</div>
-                        <div class="wc-btn"><a href="#" class="btn btn-primary">Donate</a></div>
+                        <button class="wc-btn" type="submit" id="submit">Donate</button>
+                        <!-- <div class="wc-btn"><a href="#" class="btn btn-primary" type="submit">Donate</a></div> -->
                     </div>
                 </div>
                 <div class="donation-wrapper">
@@ -113,8 +113,7 @@
                                 atque corrupti quos dolores et quas molestias excepturi sint occaecati
                                 cupiditate non provident, similique sunt
                                 in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
-                                fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                            </p>
+                                fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
                             <p>we denounce with righteous
                                 indignation and dislike men who are so beguiled and demoralized by the
                                 charms of pleasure of the moment, so blinded by desire, that they cannot
@@ -170,18 +169,20 @@
                             cumque</p>
                     </div>
                     <div class="contact-form">
-                        <div class="nema-and-number">
-                            <input type="text" class="form-control" name="name" placeholder="First name">
-                            <input type="email" class="form-control" name="Your email" placeholder="Email">
-                        </div>
-                        <div class="email-and-submit"">
-                            <input type=" text" class="form-control" name="number" placeholder="Phone">
-                            <input type="text" class="form-control" name="Subject" placeholder="Subject">
-                        </div>
-                        <textarea class="form-control" placeholder="Message"></textarea>
-                        <div class="contact-form-button">
-                            <a href="javascript:;" class="btn btn-primary">Send</a>
-                        </div>
+                        <form id="contactform" method="post" action="contact.php">
+                            <div class="nema-and-number">
+                                <input type="text" class="form-control" name="name" placeholder="First name">
+                                <input type="email" class="form-control" name="email" placeholder="Email">
+                            </div>
+                            <div class="email-and-submit">
+                                <input type=" text" class="form-control" name="number" placeholder="Phone">
+                                <input type="text" class="form-control" name="subject" placeholder="Subject">
+                            </div>
+                            <textarea class="form-control" placeholder="Message"></textarea>
+                            <div class="contact-form-button">
+                                <input type="submit" class="btn btn-primary" value="Send">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -210,7 +211,40 @@
     </footer>
     <!-- <!=== End-footer-section =====> -->
     </div>
+    <script>
+    document.getElementById("c").addEventListener("submit", function(event) {
+        var firstName = document.getElementsByName("lname")[0].value;
+        var lastName = document.getElementsByName("fname")[0].value;
+        var email = document.getElementsByName("email")[0].value;
 
+        if (firstName === "") {
+            alert("Please enter your first name");
+            event.preventDefault();
+            return false;
+        }
+        if (lastName === "") {
+            alert("Please enter your last name");
+            event.preventDefault();
+            return false;
+        }
+        if (email === "") {
+            alert("Please enter your email address");
+            event.preventDefault();
+            return false;
+        }
+        if (!validateEmail(email)) {
+            alert("Please enter a valid email address");
+            event.preventDefault();
+            return false;
+        }
+    });
+
+    function validateEmail(email) {
+        // Regular expression to validate email address
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    </script>
 </body>
 
 </html>
