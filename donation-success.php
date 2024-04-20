@@ -20,23 +20,22 @@
         <div class="container">
             <nav id="navbar" class="navbar">
                 <div class="logo">
-                    <a href="index.html"><img src="images/black-logo.png" alt="../"></a>
+                    <a href="index.php"><img src="images/black-logo.png" alt="../"></a>
                 </div>
                 <ul>
-                    <li><a class="one" href="help-me.html">Help me </a></li>
-                    <li><a class="one" href="about-us.html">About us</a></li>
-                    <li><a class="one" href="donation.html" style="font-weight: 600;">Donation</a></li>
-                    <li><a class="one" href="news.html">News</a></li>
-                    <li><a class="one" href="contact.html">Contact us</a></li>
+                    <li><a class="one" href="help-me.php">Help me </a></li>
+                    <li><a class="one" href="about-us.php">About us</a></li>
+                    <li><a class="one" href="donation.php" style="font-weight: 600;">Donation</a></li>
+                    <li><a class="one" href="news.php">News</a></li>
                     <li class="dropdown one"><a href="#"><span>Pages</span> <i class="fa fa-chevron-down"></i></a>
                         <ul>
-                            <li><a href="donation-form.html">Donation Form</a></li>
-                            <li><a href="donation-success.html">Donation Success</a></li>
+                            <li><a href="donation-form.php">Donation Form</a></li>
+                            <li><a href="donation-success.php">Donation Success</a></li>
                         </ul>
                     </li>
                 </ul>
                 <div class="donation">
-                    <a href="donation.html" class="">Donate</a>
+                    <a href="donation.php" class="">Donate</a>
                 </div>
             </nav>
         </div>

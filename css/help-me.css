@@ -1,0 +1,567 @@
+
+@font-face {
+    font-family: 'Axiforma';
+    font-weight: 800;
+    src: url('../Fonts/axiforma/FontsFree-Net-Axiforma3woff2.ttf');
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    font-weight: 400;
+    src: url('../Fonts/axiforma/Axiforma-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    font-weight: 300;
+    src: url('../Fonts/axiforma/Axiforma-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    font-weight: 400;
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.eot');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.ttf');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.woff');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.woff2');
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Light.eot');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Light.eot?#iefix') format('embedded-opentype'), url('../Fonts/CreatoDisplay/CreatoDisplay-Light.woff2') format('woff2'), url('../Fonts/CreatoDisplay/CreatoDisplay-Light.woff') format('woff'), url('../Fonts/CreatoDisplay/CreatoDisplay-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.eot');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.eot?#iefix') format('embedded-opentype'), url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.woff2') format('woff2'), url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.woff') format('woff'), url('../Fonts/CreatoDisplay/CreatoDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.eot');
+    src: url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.eot?#iefix') format('embedded-opentype'), url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.woff2') format('woff2'), url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.woff') format('woff'), url('../Fonts/CreatoDisplay/CreatoDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+body {
+    background-color: #ffffff;
+    font-family: 'Axiforma';
+    display: flex;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Axiforma';
+    margin: 0;
+    line-height: normal;
+    font-weight: 800 !important;
+    color: #000000;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1px 1px;
+    row-gap: 90px;
+}
+
+
+#header {
+    height: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 997;
+    background-color: #ffffff;
+    transition: all .4s;
+}
+
+.logo {
+    margin-left: 40px;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.navbar ul { 
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.navbar li {
+    position: relative;
+    margin-right: 35px;
+}
+.navbar a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    white-space: nowrap;
+    transition: 0.3s;
+    text-decoration: none;
+    font-family: 'Creato Display';
+}
+
+.one {
+    color: #000;
+}
+
+.navbar a i {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Font Awesome 5 Pro';
+    margin-left: 6px;
+}
+.navbar .donation {
+    margin-right: 60px;
+    padding: 10px 30px 10px;
+    background-color: #cfff8d;
+    border-radius: 20px;
+}
+
+.navbar a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    white-space: nowrap;
+    transition: 0.3s;
+    text-decoration: none;
+    font-family: 'Creato Display';
+}
+
+.one {
+    color: white;
+}
+
+
+
+.navbar a i {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Font Awesome 5 Pro';
+    margin-left: 6px;
+}
+.navbar .donation {
+    margin-right: 60px;
+    padding: 10px 30px 10px;
+    background-color: #cfff8d;
+    border-radius: 20px;
+}
+
+/* dropdown */
+.navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    padding: 10px 0;
+    visibility: hidden;
+    background: #ffffff;
+    border-radius: 9px;
+    min-width: 160px;
+}
+
+.navbar .dropdown:hover>ul {
+    visibility: visible;
+}
+
+.navbar li.dropdown ul li {
+    margin-right: 0;
+    padding: 8px 20px;
+    border-left: 3px solid white;
+}
+
+.navbar li.dropdown ul li:hover {
+    background: #cfff8d;
+    border-left: 3px solid #4c5e57;
+}
+
+.navbar .donation:hover {
+    background-color: white;
+    border: 2px solid black;
+}
+
+.main-wrapper{
+    margin-top: 100px;
+}
+.container {
+    max-width: 1420px;
+}
+.page {
+    z-index: 2;
+    position: relative;
+    background-color: white;
+    padding: 20px 20px;
+}
+.container{
+    padding: 0;
+    margin: 0;
+}
+
+.wc-help-me .main-help-content {
+    padding-bottom: 45px;
+}
+.wc-help-me .main-help-content h2.title {
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 60px;
+
+}
+
+.help-me-wrapper {
+    display: inline-flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    align-items: center;
+}
+.help-me-wrapper .help-me-image {
+    max-width: 470px;
+    width: 100%;
+}
+.help-me-wrapper .help-me-p {
+    padding-left: 94px;
+    padding-top: 37px;
+    max-width: 680px;
+}
+.wc-story-info .story-wrapper {
+    display: flex;
+    padding-bottom: 30px;
+}
+
+.story-content {
+    padding-left: 50px;
+    max-width: 567px;
+}
+
+.wc-story-info h3 {
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+.bredcum {
+    background-color: #FFF8F8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px 160px 46px 54px;
+}
+
+.bredcum .bredcum-content h2 {
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+
+.bredcum .bredcum-content p {
+    max-width: 74%;
+}
+
+.bredcum .btn {
+    padding: 14px 63px 10px;
+    font-size: 22px;
+
+}
+
+.btn-primary {
+    background-color: #CFFF8D;
+    color: #000;
+    border: 1px solid #CFFF8D;
+    border-radius: 20px;
+    text-decoration: none;
+}
+.bredcum .btn.btn-primary:active {
+    border: 2px solid #000;
+}
+
+
+.as-donation {
+    padding-bottom: 120px;
+}
+
+.as-donation h2 {
+    font-size: 60px;
+    padding-bottom: 50px;
+}
+
+.as-donation .donation-content .donation-p p {
+    font-family: 'Axiforma';
+    font-weight: 400;
+    font-size: 15px;
+    max-width: 74%;
+    padding-bottom: 20px;
+}
+
+.as-donation .donation-content {
+    display: flex;
+    max-width: 1290px
+}
+
+
+
+
+
+.faq_title.active,
+.faq_wrapper .faq_item_dropdown:hover {
+    color: #425f57;
+}
+.faq_wrapper .faq_item_dropdown ul {
+    list-style: none;
+
+    visibility: hidden;
+    
+
+}
+
+.faq_wrapper .faq_item_dropdown:hover>ul {
+    visibility: visible;
+}
+
+
+
+.faq_wrapper .faq_item_dropdown i {
+    margin-right: 1px; /* Khoảng cách giữa biểu tượng và văn bản */
+}
+.faq_wrapper .faq_item_dropdown span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.faq_wrapper .faq_item_dropdown p {
+    font-size: 14px;
+}
+.faq_wrapper .faq_item_dropdown a {
+    text-decoration: none; 
+    color: #333;
+}
+
+.faq_wrapper .faq_item_dropdown a:hover {
+    color: #425f57;
+}
+
+
+
+.faq_wrapper {
+    margin-top: 35px;
+    width: 100%;
+}
+
+
+/* contact */
+.wc-contact {
+    background-color: #FFF8F8;
+    padding: 83px 0;
+    max-width: 1420px;
+    margin: auto auto;
+}
+
+.wc-contactus {
+    padding-bottom: 120px;
+}
+
+.wc-contact .contact-title {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.wc-contact .contact-title h2 {
+    font-size: 50px;
+    padding-bottom: 10px;
+}
+
+.wc-contact .contact-title p {
+    max-width: 33%;
+    margin: auto;
+}
+
+.contact-form {
+    max-width: 836px;
+    margin: 0 auto;
+}
+
+.contact-form .nema-and-number,
+.contact-form .email-and-submit {
+    display: flex;
+    grid-gap: 22px;
+    margin-bottom: 24px;
+}
+
+.contact-form .form-control {
+    min-height: 50px;
+    border-radius: 50px;
+    background-image: none;
+    font-size: 16px;
+    color: #7F7F7F;
+    font-family: 'Creato Display';
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 10px 31px;
+}
+
+.form-control:focus {
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid #000;
+}
+
+.contact-form textarea.form-control {
+    min-height: 142px;
+    border-radius: 39px;
+    margin-bottom: 25px;
+}
+
+.contact-form .contact-form-button {
+    text-align: center;
+}
+
+.contact-form .contact-form-button .btn {
+    font-size: 22px;
+    padding: 13px 77px 10px;
+}
+
+.contact-form .contact-form-button .btn.btn-primary:active,
+.contact-form .contact-form-button .btn.btn-primary:focus {
+    border-color: #425f57;
+    background: #425f57;
+    color: #fff;
+}
+footer {
+    background-color: #425F57;
+    padding: 75px 0;
+    /* position: fixed; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.footer a.logo {
+    max-width: 280px;
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.footer .footer-content {
+    text-align: center;
+}
+
+.footer .footer-content img {
+    padding-bottom: 40px;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.footer .footer-content p {
+    color: #DFFFFFCC;
+    max-width: 26%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.footer .footer-copyright {
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+.footer .social-icon a {
+    background: rgba(207, 255, 141, 0.2);
+    border-radius: 6px;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #CFFF8D;
+    font-size: 18px;
+    margin-right: 18px;
+}
+
+.footer .social-icon a:hover {
+    background-color: #CFFF8D;
+    color: #000;
+}
+
+.footer .footer-copyright a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    font-family: 'Creato Display';
+}
+
+.footer .footer-copyright a:hover {
+    color: #CFFF8D;
+}
+@media (max-width:1199px) {
+
+    .navbar a,
+    .navbar a:focus {
+        font-size: 13px;
+    }
+}
+@media (max-width: 991px){
+#header {
+    height: 85px;
+}
+}
+@media only screen and (max-width: 1440px) {
+    #header .container {
+        padding: 0 20px !important;
+    }
+}
+@media only screen and (max-width: 1199px){
+.wc-help-me .main-help-content h2.title {
+    padding-bottom: 30px;
+    font-size: 40px;
+
+}
+}
+@media only screen and (max-width: 1366px) {
+    .wc-help .wc-help-img img {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 1366px) {
+    .wc-story-info .story-image img{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    p {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 1199px){
+.bredcum {
+    padding: 40px;
+}
+}
