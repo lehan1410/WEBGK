@@ -30,7 +30,6 @@
                     <li><a class="one" href="about-us.php">About us</a></li>
                     <li><a class="one" href="donation.php">Donation</a></li>
                     <li><a class="one" href="news.php">News</a></li>
-                    <li><a class="one" href="contact-us.php">Contact us</a></li>
                     <li class="dropdown one">
                         <a href="#"><span>Pages</span> <i class="fa fa-chevron-down"></i></a>
                         <ul>
@@ -280,30 +279,29 @@
             <!-- <!=== start-contact-section =====> -->
             <div class="wc-contactus">
                 <section class="wc-contact">
-                    <div class="container p-0">
-
+                    <div class="container">
                         <div class="contact-title">
                             <h2>Stay connect with us</h2>
-                            <p data-aos="fade-up" data-aos-duration="1500">Et harum quidem rerum facilis est et expedita
+                            <p>Et harum quidem rerum facilis est et expedita
                                 distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque</p>
                         </div>
-                        <div class="contact-form" data-aos="fade-up" data-aos-duration="1500">
-                            <div class="nema-and-number">
-                                <input type="text" class="form-control" name="name" placeholder="First name">
-                                <input type="email" class="form-control" name="Your email" placeholder="Email">
-                            </div>
-                            <div class="email-and-submit" data-aos="fade-up" data-aos-duration="1500">
-                                <input type="text" class="form-control" name="number" placeholder="Phone">
-                                <input type="text" class="form-control" name="Subject" placeholder="Subject">
-                            </div>
-                            <textarea class="form-control" placeholder="Message" data-aos="fade-up"
-                                data-aos-duration="1500"></textarea>
-                            <div class="contact-form-button" data-aos="zoom-in" data-aos-duration="1500">
-                                <a href="javascript:;" class="btn btn-primary">Send</a>
-                            </div>
+                        <div class="contact-form">
+                            <form id="contactform" method="post" action="contact.php">
+                                <div class="nema-and-number">
+                                    <input type="text" class="form-control" name="name" placeholder="First name">
+                                    <input type="email" class="form-control" name="email" placeholder="Email">
+                                </div>
+                                <div class="email-and-submit">
+                                    <input type="text" class="form-control" name="number" placeholder="Phone">
+                                    <input type="text" class="form-control" name="Subject" placeholder="Subject">
+                                </div>
+                                <textarea class="form-control" placeholder="Message"></textarea>
+                                <div class="contact-form-button">
+                                    <input type="submit" class="btn btn-primary" value="Send">
+                                </div>
+                                < </div>
+                            </form>
                         </div>
-
-                    </div>
                 </section>
             </div>
         </div>
@@ -333,18 +331,6 @@
         </footer>
         <!-- <!=== End-footer-section =====> -->
     </div>
-
-    <!-- Template Main JS File -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.mixitup.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/jquery.ba-cond.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/all.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/main.js "></script>
 </body>
 
 </html>

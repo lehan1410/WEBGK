@@ -4,27 +4,26 @@
 
     include "..\model\connect.php";
     include "..\model\user.php";
-    echo "1";
     if((isset($_POST['sign'])) && ($_POST['sign'])){
         $name = $_POST['name'];
         $email = $_POST['email'];
         $pass1 = $_POST['pass1'];
-        $pass2 = $_POST['pass1'];
-        echo $pass1;
-        $result = checkUser($name, $pass1, $email);
-        if ($result==FALSE) {
-            $conn = get_connection();
-            $stmt = $conn->prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?)");
-            $stmt->bind_param("sss", $name, $email, $pass1);
-            if ($stmt->execute()) {
-                echo "Dữ liệu đã được thêm thành công.";
-            } else {
-                echo "Lỗi khi thêm dữ liệu: " . $stmt->error;
-            }
-            header('Location: \WEBGK\index.php');
+        $pass2 = $_POST['pass2'];      
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $txt_error = "Invalid email format";
         }else {
-            $txt_error = "Incorrect username or password.";
+            $result = checkUser1($name, $email);
+            if ($result==FALSE and $pass1 == $pass2) {
+                $conn = get_connection();
+                $stmt = $conn->prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?)");
+                $stmt->bind_param("sss", $name, $email, $pass1);
+                $stmt->execute();
+                header('Location: \WEBGK\view\login.php');
+            }else {
+                $txt_error = "Incorrect username or password.";
+            }
         }
+        
     }
 ?>
 <!DOCTYPE html>
@@ -45,7 +44,7 @@
                 <input type="text" placeholder="Enter your Name" required name="name">
             </div>
             <div class="input-box">
-                <input type="text" placeholder="Enter your Email" required name="email">
+                <input type="email" placeholder="Enter your Email" required name="email">
             </div>
             <div class="input-box">
                 <input type="text" placeholder="Create Password" required name="pass1">
@@ -53,6 +52,11 @@
             <div class="input-box">
                 <input type="text" placeholder="Confirm Password" required name="pass2">
             </div>
+            <?php
+                if(isset($txt_error) && $txt_error!=""){
+                    echo "<p style='color: red; padding-bottom: 10px;'>".$txt_error."</p>";
+                }
+            ?>
             <div class="policy">
                 <input type="checkbox">
                 <h3>I accept terms & conditions</h3>

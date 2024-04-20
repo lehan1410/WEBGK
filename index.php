@@ -29,7 +29,6 @@
                     <li><a href="about-us.php">About us</a></li>
                     <li><a href="donation.php">Donation</a></li>
                     <li><a href="news.php">News</a></li>
-                    <li><a href="contact.php">Contact us</a></li>
                     <li class="dropdown one"><a href="#"><span>Pages</span> <i class="fa fa-chevron-down"></i></a>
                         <ul>
                             <li><a class="one" href="donation-form.php">Donation Form</a></li>
@@ -44,7 +43,7 @@
             <!-- .navbar -->
             <!-- <div class="">
                 <div class="logo">
-                    <a href="index.php"><img src="images/logo.png" alt="../"></a>
+                    <a href="index.html"><img src="images/logo.png" alt="../"></a>
                 </div>
             </div>
             <div class="">
@@ -52,7 +51,7 @@
                     <a href="javascript:;" class="mobile-nav-toggle"><i class="fa fa-bars"></i><i class="fa fa-xmark"></i></a>
                 </div>
                 <div class="">
-                    <a href="donation.php" class="btn btn-primary">Donate</a>
+                    <a href="donation.html" class="btn btn-primary">Donate</a>
                 </div>
             </div> -->
         </div>
