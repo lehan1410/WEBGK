@@ -45,7 +45,7 @@
                             }
                         ?>
                         <input id="Two" class="btn" type="submit" name="login"></input>
-                        <p class="forgot">Forgotten password?</p>
+                        <p class="forgot"> <a href="\WEBGK\view/forgotten-pass.php">Forgotten password?</a></p>
                     </form>
                     <p  class="account">Don't Have An Account? <a href="\WEBGK\view/registration.php">Register</a></p>
 

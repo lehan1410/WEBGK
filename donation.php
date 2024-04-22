@@ -3,6 +3,34 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
+function checkForm($name, $email, $number, $subject, $message ){
+    if(empty($name) || empty($email) || empty($number) || empty($subject) || empty($message)){
+        echo '<script>alert("Please enter complete information.")</script>';
+        return false; // Some fields are empty
+    }
+    return true; // All fields are filled
+}
+session_start();
+ob_start();
+if((isset($_POST['send'])) && ($_POST['send'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $number = $_POST['number'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];   
+    $result = checkForm($name, $email, $number, $subject, $message);
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $txt_error = "Invalid email format";
+    }else {
+        if ($result==TRUE) {
+            header('Location: \WEBGK\donation.php');
+        }else {
+            $txt_error = "Please enter complete information.";
+        }
+    }
+    
+}
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -35,6 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -217,9 +246,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <input type="text" class="form-control" name="subject" placeholder="Subject">
                             </div>
                             <textarea class="form-control" placeholder="Message"></textarea>
+                            <?php
+                            if(isset($txt_error) && $txt_error!=""){
+                                echo "<p style='color: red; padding-bottom: 10px;'>".$txt_error."</p>";
+                            }
+                            ?>
                             <div class="contact-form-button">
                                 <input type="submit" class="btn btn-primary" name="send" value="Send">
                             </div>
+
                         </form>
                     </div>
                 </div>

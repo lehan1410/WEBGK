@@ -1,13 +1,14 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST['email'];
+        $code = $_POST['code'];
         include "..\model\connect.php";
         include "..\model\user.php";
-        $a = checkUser2($email);
+        $a = checkUser3($code);
         if ($a == TRUE){
-            header('Location: \WEBGK\view\reset-code.php');
+            file_put_contents("temp.txt", $code);
+            header('Location: \WEBGK\view\change-pass.php');
         }else {
-            $txt_error = "Incorrect email.";
+            $txt_error = "Incorrect code.";
         }
     }
 ?>
@@ -17,16 +18,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Forgot</title>
+    <title>Code Verification</title>
     <link rel="stylesheet" href="\WEBGK\css\registration.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <h2>Forgot</h2>
+        <h2>Code Verification</h2>
         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
             <div class="input-box">
-                <input type="email" placeholder="Enter your Email" required name="email">
+                <input type="text" placeholder="Enter your Code" required name="code">
             </div>
             <?php
                 if(isset($txt_error) && $txt_error!=""){
