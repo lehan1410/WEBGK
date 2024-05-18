@@ -1,12 +1,12 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $code = $_POST['code'];
-        include "..\model\connect.php";
-        include "..\model\user.php";
+        include "../connect.php";
+        include "../user.php";
         $a = checkUser3($code);
         if ($a == TRUE){
             file_put_contents("temp.txt", $code);
-            header('Location: \WEBGK\view\change-pass.php');
+            header('Location: ..\view\change-pass.php');
         }else {
             $txt_error = "Incorrect code.";
         }
@@ -19,7 +19,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Verification</title>
-    <link rel="stylesheet" href="\WEBGK\css\registration.css">
+    <link rel="stylesheet" href="..\css\registration.css">
 </head>
 
 <body>

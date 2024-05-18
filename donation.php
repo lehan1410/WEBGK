@@ -3,8 +3,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-require '../vendor/phpmailer/phpmailer/src/SMTP.php';
-require '../vendor/autoload.php'; 
+require 'vendor/phpmailer/phpmailer/src/SMTP.php';
+require 'vendor/autoload.php'; 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST['email'];
         include "..\model\connect.php";

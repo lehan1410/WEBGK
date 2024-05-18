@@ -37,7 +37,7 @@
                     </li>
                 </ul>
                 <div class="donation">
-                    <a href="donation.php" class="">Donate</a>
+                    <a href="\view\login.php" class="">Donate</a>
                 </div>
             </nav>
             <!-- .navbar -->
