@@ -1,11 +1,11 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST['email'];
-        include "..\model\connect.php";
-        include "..\model\user.php";
+        include "../connect.php";
+        include "../user.php";
         $a = checkUser2($email);
         if ($a == TRUE){
-            header('Location: \WEBGK\view\reset-code.php');
+            header('Location: ..\view\reset-code.php');
         }else {
             $txt_error = "Incorrect email.";
         }
@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Forgot</title>
-    <link rel="stylesheet" href="\WEBGK\css\registration.css">
+    <link rel="stylesheet" href="..\css\registration.css">
 </head>
 
 <body>

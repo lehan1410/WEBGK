@@ -2,14 +2,14 @@
     session_start();
     ob_start();
 
-    include "..\model\connect.php";
-    include "..\model\user.php";
+    include "../connect.php";
+    include "../user.php";
     if((isset($_POST['login'])) && ($_POST['login'])){
         $name = $_POST['name'];
         $pass = $_POST['pass'];
         $result = checkUser($name, $pass);
         if ($result==TRUE) {
-            header('Location: \WEBGK\index.php');
+            header('Location: ..\index.php');
         }else {
             $txt_error = "Incorrect username or password.";
         }
@@ -23,7 +23,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="\WEBGK\css\login.css">
+    <link rel="stylesheet" href="..\css\login.css">
     <style>
 
     </style>
@@ -45,13 +45,13 @@
                             }
                         ?>
                         <input id="Two" class="btn" type="submit" name="login"></input>
-                        <p class="forgot"> <a href="\WEBGK\view/forgotten-pass.php">Forgotten password?</a></p>
+                        <p class="forgot"> <a href="\view/forgotten-pass.php">Forgotten password?</a></p>
                     </form>
-                    <p  class="account">Don't Have An Account? <a href="\WEBGK\view/registration.php">Register</a></p>
+                    <p  class="account">Don't Have An Account? <a href="\view/registration.php">Register</a></p>
 
                 </div>
                 <div class="form-img">
-                    <img src="\WEBGK\images\bg.png" alt="">
+                    <img src="..\images\bg.png" alt="">
                 </div>
             </div>
         </div>

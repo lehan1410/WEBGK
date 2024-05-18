@@ -2,13 +2,13 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pass1 = $_POST['pass1'];
         $pass2 = $_POST['pass2'];
-        include "..\model\connect.php";
-        include "..\model\user.php";
+        include "../connect.php";
+        include "../user.php";
         $code = file_get_contents("temp.txt");
         $a = checkUser4($pass1, $code);
         if ($pass1 == $pass2){
             if ($a == TRUE){
-                header('Location: \WEBGK\view\login.php');
+                header('Location: ..\view\login.php');
             }
         else {
             $txt_error = "Incorrect password.";
@@ -23,7 +23,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Verification</title>
-    <link rel="stylesheet" href="\WEBGK\css\registration.css">
+    <link rel="stylesheet" href="..\css\registration.css">
 </head>
 
 <body>
