@@ -1,3 +1,68 @@
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
+function checkForm($name, $email, $number, $subject, $message ){
+    if(empty($name) || empty($email) || empty($number) || empty($subject) || empty($message)){
+        echo '<script>alert("Please enter complete information.")</script>';
+        return false; // Some fields are empty
+    }
+    return true; // All fields are filled
+}
+session_start();
+ob_start();
+if((isset($_POST['send'])) && ($_POST['send'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $number = $_POST['number'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];   
+    $result = checkForm($name, $email, $number, $subject, $message);
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $txt_error = "Invalid email format";
+    }else {
+        if ($result==TRUE) {
+            header('Location: \WEBGK\donation.php');
+        }else {
+            $txt_error = "Please enter complete information.";
+        }
+    }
+    
+}
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+
+    $mail = new PHPMailer();
+    try {
+        //Server settings
+        $mail->SMTPDebug = 0;                                 
+        $mail->isSMTP();                                      
+        $mail->Host = 'smtp.gmail.com';  
+        $mail->SMTPAuth = true;                               
+        $mail->Username = '52200155@student.tdtu.edu.vn';                 
+        $mail->Password = 'eags pwty jjij hsuq';                           
+        $mail->SMTPSecure = 'tls';                            
+        $mail->Port = 587;                                    
+
+        //Recipients
+        $mail->setFrom('52200155@student.tdtu.edu.vn', 'WEBGK-N11');
+        $mail->addAddress($email, $name);     
+
+        //Content
+        $mail->isHTML(true);                                  
+        $mail->Subject = 'Confirmation of Contact Form Submission';
+        $mail->Body    = "Dear $name,<br><br>Thank you for your submission.<br><br>Best regards,<br>Group 11";
+        $mail->send();
+    } catch (Exception $e) {
+        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -116,7 +181,7 @@
                     <div class="wc-story-info">
                         <h2>Story of Rohan</h2>
                         <div class="story-wrapper">
-                            <div class="story-image" data-aos="flip-left" data-aos-duration="1500">
+                            <div class="story-image">
                                 <img src="images/story-info.png" alt="../" />
                             </div>
                             <div class="story-content">
@@ -286,20 +351,25 @@
                                 distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque</p>
                         </div>
                         <div class="contact-form">
-                            <form id="contactform" method="post" action="contact.php">
+                            <form id="contactform" method="post"
+                                action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                                 <div class="nema-and-number">
                                     <input type="text" class="form-control" name="name" placeholder="First name">
                                     <input type="email" class="form-control" name="email" placeholder="Email">
                                 </div>
                                 <div class="email-and-submit">
-                                    <input type="text" class="form-control" name="number" placeholder="Phone">
-                                    <input type="text" class="form-control" name="Subject" placeholder="Subject">
+                                    <input type=" text" class="form-control" name="number" placeholder="Phone">
+                                    <input type="text" class="form-control" name="subject" placeholder="Subject">
                                 </div>
-                                <textarea class="form-control" placeholder="Message"></textarea>
+                                <textarea class="form-control" name="message" placeholder=" Message"></textarea>
+                                <?php
+                                if(isset($txt_error) && $txt_error!=""){
+                                    echo "<p style='color: red; padding-bottom: 10px;'>".$txt_error."</p>";
+                                }
+                                ?>
                                 <div class="contact-form-button">
-                                    <input type="submit" class="btn btn-primary" value="Send">
+                                    <input type="submit" class="btn btn-primary" name="send" value="Send">
                                 </div>
-                                < </div>
                             </form>
                         </div>
                 </section>

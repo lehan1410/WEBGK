@@ -168,24 +168,19 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="recent-donors">
+                            <h2>Recent Donors</h2>
+                            <?php foreach ($donors as $donor): ?>
+                            <p><?php echo $donor['name']; ?> donated <?php echo $donor['amount']; ?> on
+                                <?php echo $donor['donation_date']; ?></p>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- <===== End-Donation-form-section =====> -->
     </div>
-
-    <!-- Template Main JS File -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.mixitup.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/jquery.ba-cond.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/all.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/main.js "></script>
 </body>
 
 </html>
