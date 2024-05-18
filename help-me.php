@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </li>
                 </ul>
                 <div class="donation">
-                    <a href="donation.php">Donate</a>
+                    <a href="\WEBGK\view\login.php" class="btn btn-primary">Login</a>
                 </div>
             </nav>
         </div>

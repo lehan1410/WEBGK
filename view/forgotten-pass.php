@@ -1,5 +1,5 @@
 <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
         $email = $_POST['email'];
         include "..\model\connect.php";
         include "..\model\user.php";

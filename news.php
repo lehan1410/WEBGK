@@ -24,7 +24,7 @@
                 <ul>
                     <li><a class="one" href="help-me.php">Help me </a></li>
                     <li><a class="one" href="about-us.php">About us</a></li>
-                    <li><a class="one" href="donation.php" >Donation</a></li>
+                    <li><a class="one" href="donation.php">Donation</a></li>
                     <li><a class="one" href="news.php" style="font-weight: 600;">News</a></li>
                     <li class="dropdown">
                         <a href="#"><span>Pages</span>
@@ -37,7 +37,7 @@
                     </li>
                 </ul>
                 <div class="wc-btn">
-                    <a href="donation.php" class="btn btn-primary">Donate</a>
+                    <a href="\WEBGK\view\login.php" class="btn btn-primary">Login</a>
                 </div>
             </nav>
         </div>

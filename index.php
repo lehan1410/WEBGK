@@ -37,23 +37,25 @@
                     </li>
                 </ul>
                 <div class="donation">
-                    <a href="donation.php" class="">Donate</a>
+                    <?php
+                        // Start the session
+                        session_start();
+                        require "model/connect.php";
+                        require "model/user.php";
+                        if(isset($_SESSION["data"])) {
+                            $email = $_SESSION["data"]["email"];
+                            $name = $_SESSION["data"]["name"];
+                            $result = getName($email);
+                            if($result==TRUE){
+                                echo 'Welcome, '.$name;
+                            }
+                            else{
+                                echo 'You are not logged in.';
+                            }
+                        }
+                    ?>
                 </div>
             </nav>
-            <!-- .navbar -->
-            <!-- <div class="">
-                <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" alt="../"></a>
-                </div>
-            </div>
-            <div class="">
-                <div class="">
-                    <a href="javascript:;" class="mobile-nav-toggle"><i class="fa fa-bars"></i><i class="fa fa-xmark"></i></a>
-                </div>
-                <div class="">
-                    <a href="donation.html" class="btn btn-primary">Donate</a>
-                </div>
-            </div> -->
         </div>
     </header>
     <!-- End Header -->

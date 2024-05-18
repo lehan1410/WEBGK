@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `login` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `login`;
+CREATE DATABASE IF NOT EXISTS `Donation` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `Donation`;
 
 CREATE TABLE `user` (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,

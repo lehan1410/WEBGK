@@ -5,13 +5,14 @@
     include "..\model\connect.php";
     include "..\model\user.php";
     if((isset($_POST['login'])) && ($_POST['login'])){
-        $name = $_POST['name'];
+        $email = $_POST['email'];
         $pass = $_POST['pass'];
-        $result = checkUser($name, $pass);
+        $result = checkUser($email, $pass);
         if ($result==TRUE) {
+          
             header('Location: \WEBGK\index.php');
         }else {
-            $txt_error = "Incorrect username or password.";
+            $txt_error = "Incorrect email or password.";
         }
     }
 ?>
@@ -37,7 +38,7 @@
                 <div class="content">
                     <h2>Log In</h2>
                     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-                        <input id="one" type="text" name="name" placeholder="User Name" required autofocus="">
+                        <input id="one" type="email" name="email" placeholder="Email" required autofocus="">
                         <input id="one" type="password" name="pass" placeholder="User Password" required autofocus="">
                         <?php
                             if(isset($txt_error) && $txt_error!=""){
@@ -47,7 +48,7 @@
                         <input id="Two" class="btn" type="submit" name="login"></input>
                         <p class="forgot"> <a href="\WEBGK\view/forgotten-pass.php">Forgotten password?</a></p>
                     </form>
-                    <p  class="account">Don't Have An Account? <a href="\WEBGK\view/registration.php">Register</a></p>
+                    <p class="account">Don't Have An Account? <a href="\WEBGK\view/registration.php">Register</a></p>
 
                 </div>
                 <div class="form-img">

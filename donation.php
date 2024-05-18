@@ -22,7 +22,7 @@ if((isset($_POST['send'])) && ($_POST['send'])){
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $txt_error = "Invalid email format";
     }else {
-        if ($result==TRUE) {
+        if ($result=='TRUE') {
             header('Location: \WEBGK\donation.php');
         }else {
             $txt_error = "Please enter complete information.";
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </li>
                 </ul>
                 <div class="wc-btn">
-                    <a href="donation.php" class="btn btn-primary">Donate</a>
+                    <a href="\WEBGK\view\login.php" class="btn btn-primary">Login</a>
                 </div>
             </nav>
         </div>
@@ -154,8 +154,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <input type="email" class="form-control" name="email" placeholder="Email Address">
                         <div class="btn-text">Donation Total: 25</div>
-                        <button class="wc-btn" type="submit" id="submit">Donate</button>
-                        <!-- <div class="wc-btn"><a href="#" class="btn btn-primary" type="submit">Donate</a></div> -->
+                        <!-- <button class="wc-btn" type="submit" id="submit">Donate</button> -->
+                        <div class="wc-btn"><a href="#" class="btn btn-primary" type="submit">Donate</a></div>
                     </div>
                 </div>
                 <div class="donation-wrapper">

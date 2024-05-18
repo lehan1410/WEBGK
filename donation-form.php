@@ -38,7 +38,7 @@
                     </li>
                 </ul>
                 <div class="donation">
-                    <a href="donation.php">Donate</a>
+                    <a href="\WEBGK\view\login.php" class="btn btn-primary">Login</a>
                 </div>
             </nav>
         </div>
@@ -167,13 +167,6 @@
                                     <a href="javascript:;" class="btn btn-primary">Donate</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="recent-donors">
-                            <h2>Recent Donors</h2>
-                            <?php foreach ($donors as $donor): ?>
-                            <p><?php echo $donor['name']; ?> donated <?php echo $donor['amount']; ?> on
-                                <?php echo $donor['donation_date']; ?></p>
-                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>

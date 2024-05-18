@@ -35,7 +35,7 @@
                     </li>
                 </ul>
                 <div class="donation">
-                    <a href="donation.php" class="">Donate</a>
+                    <a href="\WEBGK\view\login.php" class="btn btn-primary">Login</a>
                 </div>
             </nav>
         </div>
