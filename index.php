@@ -37,7 +37,7 @@
                     </li>
                 </ul>
                 <div class="donation">
-                    <?php
+                    <!-- <?php
                         // Start the session
                         session_start();
                         require "model/connect.php";
@@ -53,7 +53,7 @@
                                 echo 'You are not logged in.';
                             }
                         }
-                    ?>
+                    ?> -->
                 </div>
             </nav>
         </div>
