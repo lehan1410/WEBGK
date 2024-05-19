@@ -178,6 +178,53 @@ body {
     background-color: #cfff8d;
     border-radius: 20px;
 }
+.transperent header#header .navbar a:hover {
+    color: #CFFF8D;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+    color: black;
+    background: ư;
+
+}
+
+.navbar .wc-btn .btn {
+    padding: 10px 30px 6px;
+    font-family: 'Axiforma';
+    font-weight: 400 !important;
+    margin-right: 60px;
+}
+
+.navbar .wc-btn .btn-primary {
+    color: #000 !important;
+    background: #CFFF8D;
+    border-radius: 20px;
+}
+
+.transperent .navbar .wc-btn .btn-primary:hover {
+    color: #fff !important;
+    border: 2px solid #CFFF8D;
+}
+
+.navbar .wc-btn .btn-primary:hover {
+    color: #000 !important;
+    border: 2px solid #000000;
+    background-color: transparent !important;
+}
+
+.navbar .wc-btn .btn-primary:active,
+.navbar .wc-btn .btn-primary:focus {
+    background-color: transparent;
+    border-color: #000000;
+}
+
+.navbar ul li a:hover {
+    color: #006662;
+    transition: all .4s;
+}
 
 /* dropdown */
 .navbar .dropdown ul {
@@ -206,7 +253,7 @@ body {
 }
 
 .navbar .donation:hover {
-    background-color: white;
+    /* background-color: white; */
     border: 2px solid black;
 }
 

@@ -65,7 +65,7 @@
                 <div class="wc-hero">
                     <h1>The Happiness is Giving it Away</h1>
                     <div>
-                        <a>Get help now</a>
+                        <a style="text-decoration:none" href="/WEBGK/help-me.php">Get help now</a>
                         <a style="text-decoration:none" href="https://www.youtube.com/watch?v=kOISEM6L4xk">Watch
                             Video</a>
                     </div>
@@ -101,7 +101,7 @@
                                     to use a passage of Lorem Ipsum, you need to be sure there isn't anything
                                     embarrassing hidden in the middle of text.</P>
                                 <div>
-                                    <a href="#">About us</a>
+                                    <a href="/WEBGK/about-us.php">About us</a>
                                 </div>
                             </div>
 

@@ -419,7 +419,7 @@ section {
     text-align: right;
 }
 
-.latest-image-content {
+.latest-image-content> img {
     max-width: 40%;
 }
 
@@ -464,7 +464,7 @@ a:hover {
 
 .wc-chariti {
     padding-bottom: 140px;
-    
+
     /* position: relative;
     background-color: transparent; */
 }
@@ -475,17 +475,18 @@ a:hover {
     overflow: hidden;
 }
 
-.wc-chariti > .project-img {
+.wc-chariti>.project-img {
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.latest-news{
+.latest-news {
     text-align: center;
     border: #425F57;
     border-radius: 50px;
 }
+
 .contactus {
     background-color: #fff8f8;
     border-radius: 20px;
