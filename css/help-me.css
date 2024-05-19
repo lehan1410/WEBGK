@@ -427,6 +427,8 @@ body {
     padding: 83px 0;
     max-width: 1420px;
     margin: auto auto;
+    border-radius: 10px;
+
 }
 
 .wc-contactus {
