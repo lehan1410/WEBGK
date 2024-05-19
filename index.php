@@ -36,8 +36,8 @@
                         </ul>
                     </li>
                 </ul>
-                <div class="donation">
-                    <a href="donation.php" class="">Donate</a>
+                <div class="wc-btn">
+                    <a href="\WEBGK\view\login.php" class="btn btn-primary">Login</a>
                 </div>
             </nav>
             <!-- .navbar -->
@@ -174,7 +174,8 @@
                     <div class="latest-image-content">
                         <img src="images/latest.png" alt="../">
                         <p>10 jun,2022</p>
-                        <h2><a href="news.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+                        <h2><a href="/WEBGK/news.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                                reiciendis
                                 voluptatibus maiores alias
                             </a>
                         </h2>

@@ -143,12 +143,39 @@ body {
     margin-left: 6px;
 }
 
-.navbar .donation {
+.navbar .wc-btn .btn {
+    padding: 10px 30px 6px;
+    font-family: 'Axiforma';
+    font-weight: 400 !important;
     margin-right: 60px;
-    padding: 10px 30px 10px;
-    background-color: #cfff8d;
+}
+
+.navbar .wc-btn .btn-primary {
+    color: #000 !important;
+    background: #CFFF8D;
     border-radius: 20px;
-    justify-content: center;
+}
+
+.transperent .navbar .wc-btn .btn-primary:hover {
+    color: #fff !important;
+    border: 2px solid #CFFF8D;
+}
+
+.navbar .wc-btn .btn-primary:hover {
+    color: #fff !important;
+    border: 2px solid #CFFF8D;
+    background-color: transparent !important;
+}
+
+.navbar .wc-btn .btn-primary:active,
+.navbar .wc-btn .btn-primary:focus {
+    background-color: transparent;
+    border-color: #000000;
+}
+
+.navbar ul li a:hover {
+    color: #006662;
+    transition: all .4s;
 }
 
 /* dropdown */
@@ -197,6 +224,9 @@ section {
     justify-content: center;
     padding-bottom: 80px;
 }
+/* #hero>.wc-hero {
+    padding-bottom: 80px;
+} */
 
 #hero>.wc-hero>div>a {
     color: black;
@@ -230,6 +260,7 @@ section {
     margin-left: auto;
     margin-right: auto;
     position: static;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .about-us h2.title {
@@ -386,11 +417,12 @@ section {
     background-color: #FFF8F8;
     padding: 10px 30px;
     margin-bottom: 120px;
-    /* position: relative; */
+    position: relative;
 }
 
 .wc-latest .latest-title {
     padding-bottom: 70px;
+    text-align: center;
 }
 
 .wc-latest .latest-title h2 {
@@ -402,15 +434,16 @@ section {
     font-size: 16px;
     color: #7F7F7F;
     line-height: 26px;
-    margin: 0;
+    margin-left: 400px;
     font-weight: 400;
     font-family: 'Creato Display';
+    text-align: center;
 }
 
 .wc-latest .single-cause-item {
     border-left: 1px solid rgba(0, 0, 0, 0.3);
-    padding-left: 100px;
-    margin-left: 100px;
+    padding-left: 50px;
+    margin-left: 20px;
     padding-top: 40px;
 }
 
@@ -419,9 +452,6 @@ section {
     text-align: right;
 }
 
-.latest-image-content> img {
-    max-width: 40%;
-}
 
 .wc-latest .single-cause-item .cause-meta {
     display: flex;
@@ -430,10 +460,6 @@ section {
     padding-bottom: 16px;
 }
 
-.wc-latest .single-cause-item .cause-content {
-    max-width: 500px;
-    padding-bottom: 50px;
-}
 
 .wc-latest .single-cause-item .cause-content:last-child {
     padding-bottom: 7px;
@@ -445,6 +471,7 @@ section {
 
 .wc-latest .ab {
     display: flex;
+    justify-content: space-between;
 }
 
 .wc-latest a {
@@ -456,10 +483,14 @@ section {
     color: #425F57;
     font-family: 'Axiforma';
 }
+.wc-latest .latest-image-content img{
+    max-width: 120%;
+}
 
 .wc-latest .latest-image-content h2,
 a:hover {
     color: #557571;
+
 }
 
 .wc-chariti {
