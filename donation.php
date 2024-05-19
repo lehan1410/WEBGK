@@ -12,6 +12,10 @@ function checkForm($name, $email, $number, $subject, $message ){
 }
 session_start();
 ob_start();
+
+$user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
+$logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
+
 include "./models/connect.php";
 include "./models/donationModel.php";
 
@@ -34,23 +38,57 @@ if((isset($_POST['send'])) && ($_POST['send'])){
     
 }
 
-if(isset($_POST['donate']) && $_POST['donate']) {
+if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['donate'])) {
     $first_name = $_POST['fname'];
     $last_name = $_POST['lname'];
     $email = $_POST['email'];
     $donation_amount = $_POST['donation_amount'];
-    $result = donate($first_name, $last_name, $email, $donation_amount);
+    $payment_method = $_POST['payment_method'];
+    $result = checkUser($email);
     if ($result==TRUE) {
-            header('Location: \WEBGK\view\donation-success.php');
+        $result1 = donate($first_name, $last_name, $email, $donation_amount, $payment_method);
+        if ($result1==TRUE) {
+            header('Location: /WEBGK/donation-success.php');
+        }
+        else {
+            echo '<script>alert("Donation failed.")</script>';
         }
     }
     else {
-        echo "Donation Failed.";
-    
+        echo '<script>alert("User not found.")</script>';
+    }
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['donate'])) {
+    $name = $_POST['fname'] + $_POST['lname'];
+    $email = $_POST['email'];
+    $mail = new PHPMailer();
+    try {
+        //Server settings
+        $mail->SMTPDebug = 0;                                 
+        $mail->isSMTP();                                      
+        $mail->Host = 'smtp.gmail.com';  
+        $mail->SMTPAuth = true;                               
+        $mail->Username = '52200155@student.tdtu.edu.vn';                 
+        $mail->Password = 'eags pwty jjij hsuq';                           
+        $mail->SMTPSecure = 'tls';                            
+        $mail->Port = 587;                                    
+
+        //Recipients
+        $mail->setFrom('52200155@student.tdtu.edu.vn', 'WEBGK-N11');
+        $mail->addAddress($email, $name);     
+
+        //Content
+        $mail->isHTML(true);                                  
+        $mail->Subject = 'Confirmation of Donation Form Submission';
+        $mail->Body    = "Dear $name,<br><br>Thank you for your donate.<br><br>Best regards,<br>Group 11";
+        $mail->send();
+    } catch (Exception $e) {
+        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    }
 }
    
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send'])) {
+    $name = $_POST['fname'] + $_POST['lname'];
     $email = $_POST['email'];
 
     $mail = new PHPMailer();
@@ -121,7 +159,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </li>
                 </ul>
                 <div class="wc-btn">
-                    <a href="\WEBGK\view\login.php" class="btn btn-primary">Login</a>
+                    <?php if ($logged_in) : ?>
+                    <div class="logged-in-user">
+                        <span>Welcome, <?php echo $user_name; ?></span><a href="/WEBGK/view/logout.php"
+                            class="btn btn-primary">Logout</a>
+
+                    </div>
+                    <?php else : ?>
+                    <div class="wc-btn">
+                        <a href="/WEBGK/view/login.php" class="btn btn-primary">Login</a>
+                    </div>
+                    <?php endif; ?>
                 </div>
             </nav>
         </div>
@@ -132,7 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="page">
             <!-- <===== Start-Donation-section =====> -->
             <div class="container">
-                <form method="POST" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <form method="POST" action=" <?php echo $_SERVER["PHP_SELF"]; ?>">
                     <div class="donation-box">
                         <h2>Ut enim ad minim veniam, quis nostrud
                             exercitation ullamco </h2>
@@ -152,15 +200,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                                 <h4>Select Payment Method</h4>
                                 <label class="Radio">
-                                    <input type="radio" name="position_of_interest" value="Radio Field">
-                                    <span class="list-item-label">Test Donation</span>
+                                    <input type="radio" name="payment_method" value="Online banking">
+                                    <span class="list-item-label">Online banking</span>
                                 </label>
                                 <label class="Radio">
-                                    <input type="radio" name="position_of_interest" value="Radio Field">
+                                    <input type="radio" name="payment_method" value="Offline donation">
                                     <span class="list-item-label">Offline donation</span>
                                 </label>
                                 <label class="Radio">
-                                    <input type="radio" name="position_of_interest" value="Radio Field">
+                                    <input type="radio" name="payment_method" value="Credit Card">
                                     <span class="list-item-label">Credit Card</span>
                                 </label>
                             </div>

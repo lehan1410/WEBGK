@@ -1,3 +1,14 @@
+<?php 
+    include './models/donationsuccessModel.php';
+    include "./models/connect.php";
+    session_start();
+    $user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
+    $logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
+    $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+    $donations = getDonation($email);
+    $recentDonations = getRecentDonations(10);
+    $donationSummary = getDonationSummaryByEmail();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,8 +45,18 @@
                         </ul>
                     </li>
                 </ul>
-                <div class="donation">
-                    <a href="\WEBGK\view\login.php" class="btn btn-primary">Login</a>
+                <div class="wc-btn">
+                    <?php if ($logged_in) : ?>
+                    <div class="logged-in-user">
+                        <span>Welcome, <?php echo $user_name; ?></span><a href="/WEBGK/view/logout.php"
+                            class="btn btn-primary">Logout</a>
+
+                    </div>
+                    <?php else : ?>
+                    <div class="wc-btn">
+                        <a href="/WEBGK/view/login.php" class="btn btn-primary">Login</a>
+                    </div>
+                    <?php endif; ?>
                 </div>
             </nav>
         </div>
@@ -48,27 +69,68 @@
         <section class="donation-success">
             <div class="container">
                 <div class="inner-success">
-                    <h2>Order Success</h2>
+                    <h2>Donation Success</h2>
                     <h3 class="title">Donation Successful</h3>
                     <p>Your Donation has been placed successfully, please review the Donation below</p>
                     <h3 class="title">Donation Detail</h3>
                     <div class="details-table">
                         <table>
                             <tr>
-                                <th>Description</th>
-                                <th>-</th>
+                                <th>Full Name</th>
+                                <th>
+                                    <?php
+                                    foreach ($donations as $donation) {
+                                        echo $donation['first_name'] . ' ' . $donation['last_name'];
+                                    }
+                                    ?>
+                                </th>
                             </tr>
                             <tr>
+                                <td>Email</td>
+                                <td>
+                                    <?php
+                                    foreach ($donations as $donation) {
+                                        echo $donation['email'];
+                                    }
+                                    ?>
+                                </td>
+                            <tr>
                                 <td>Gateway</td>
-                                <td>Offfline</td>
+                                <td>
+                                    <?php
+                                    foreach ($donations as $donation) {
+                                        if ($donation['payment_method'] == 'Offline Donation') {
+                                            echo 'Offline';
+                                        } else {
+                                            echo 'Online';
+                                        }
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Transaction status</td>
-                                <td>Pending payment</td>
+                                <td>
+                                    <?php
+                                    foreach ($donations as $donation) {
+                                        if ($donation['payment_method'] != 'Offline Donation') {
+                                            echo 'Pending payment';
+                                        } else {
+                                            echo 'Success';
+                                        }
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Donation total</td>
-                                <td>$ 50</td>
+                                <td><span>$</span>
+                                    <?php
+                                    foreach ($donations as $donation) {
+                                        echo $donation['donation_total'];
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Currency</td>
@@ -77,21 +139,31 @@
                         </table>
                     </div>
                     <div class="payment-tabel">
-                        <h3>Offline Payment Instruction</h3>
+                        <h3>Top 10 recent donators</h3>
                         <div class="payment-tabel-success">
                             <table>
                                 <tr>
-                                    <th>Item name</th>
-                                    <th>Price</th>
+                                    <th>Full name</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
                                 </tr>
-                                <tr>
-                                    <td>Lorem ipsum</td>
-                                    <td>$ 50</td>
-                                    <td>1</td>
-                                    <td>$ 50</td>
-                                </tr>
+                                <?php
+                                if(isset($recentDonations) && !empty($recentDonations)){
+                                    foreach ($recentDonations as $donation) {
+                                        echo '<tr>';
+                                        echo '<td>' . $donation['first_name'] . ' ' . $donation['last_name'] . '</td>';
+                                        echo '<td>' . $donation['donation_total'] . '</td>';
+                                        echo '<td>' . $donation['donation_total'] . '</td>';
+                                        echo '</tr>';
+                                    }
+                                }
+                                else{
+                                    echo '<tr>';
+                                    echo '<td style="text-align:center" colspan="3">No recent donations</td>';
+                                    echo '</tr>';
+                                }
+                                
+                                ?>
                             </table>
                         </div>
                     </div>

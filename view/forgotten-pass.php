@@ -1,8 +1,8 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
         $email = $_POST['email'];
-        include "../connect.php";
-        include "../user.php";
+        include "../models/connect.php";
+        include "../models/user.php";
         $a = checkUser2($email);
         if ($a == TRUE){
             header('Location: ..\view\reset-code.php');

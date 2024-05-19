@@ -2,8 +2,8 @@
     session_start();
     ob_start();
 
-    include "../connect.php";
-    include "../user.php";
+    include "../models/connect.php";
+    include "../models/user.php";
     if((isset($_POST['sign'])) && ($_POST['sign'])){
         $name = $_POST['name'];
         $email = $_POST['email'];
@@ -18,7 +18,7 @@
                 $stmt = $conn->prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?)");
                 $stmt->bind_param("sss", $name, $email, $pass1);
                 $stmt->execute();
-                header('Location: /view/login.php');
+                header('Location: /WEBGK/view/login.php');
             }else {
                 $txt_error = "Incorrect username or password.";
             }
@@ -66,7 +66,7 @@
                 <input type="submit" value="Register Now" name="sign">
             </div>
             <div class="text">
-                <h3>Already have an account? <a href="/view/login.php">Login Now</a></h3>
+                <h3>Already have an account? <a href="/WEBGK/view/login.php">Login Now</a></h3>
             </div>
         </form>
     </div>

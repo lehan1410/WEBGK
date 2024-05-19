@@ -1,8 +1,8 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $code = $_POST['code'];
-        include "../connect.php";
-        include "../user.php";
+        include "../models/connect.php";
+        include "../models/user.php";
         $a = checkUser3($code);
         if ($a == TRUE){
             file_put_contents("temp.txt", $code);

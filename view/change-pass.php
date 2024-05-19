@@ -2,8 +2,8 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pass1 = $_POST['pass1'];
         $pass2 = $_POST['pass2'];
-        include "../connect.php";
-        include "../user.php";
+        include "../models/connect.php";
+        include "../models/user.php";
         $code = file_get_contents("temp.txt");
         $a = checkUser4($pass1, $code);
         if ($pass1 == $pass2){

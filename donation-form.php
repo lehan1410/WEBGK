@@ -1,3 +1,8 @@
+<?php
+session_start();
+$user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
+$logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,8 +39,18 @@
                         </ul>
                     </li>
                 </ul>
-                <div class="donation">
-                    <a href="\WEBGK\view\login.php" class="btn btn-primary">Login</a>
+                <div class="wc-btn">
+                    <?php if ($logged_in) : ?>
+                    <div class="logged-in-user">
+                        <span>Welcome, <?php echo $user_name; ?></span><a href="/WEBGK/view/logout.php"
+                            class="btn btn-primary">Logout</a>
+
+                    </div>
+                    <?php else : ?>
+                    <div class="wc-btn">
+                        <a href="/WEBGK/view/login.php" class="btn btn-primary">Login</a>
+                    </div>
+                    <?php endif; ?>
                 </div>
             </nav>
         </div>

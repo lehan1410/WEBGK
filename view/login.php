@@ -9,6 +9,14 @@
         $pass = $_POST['pass'];
         $result = checkUser($email, $pass);
         if ($result==TRUE) {
+            $user_info = getName($email);
+            $_SESSION['email'] = $email;
+            if (is_array($user_info) && isset($user_info['name'])) {
+                $_SESSION['name'] = $user_info['name'];
+            } else {
+                echo "Error getting user info";
+            }
+            $_SESSION['logged_in'] = true;
             header('Location: /WEBGK/index.php');
         }else {
             $txt_error = "Incorrect email or password.";
