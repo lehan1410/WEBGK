@@ -512,3 +512,8 @@ a, a:hover {
     line-height: normal;
     color: #526f67;
 }
+#custom_amount_input input{
+    border: #000;
+    border-radius: 5px;
+    width: 50px;
+}

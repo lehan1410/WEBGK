@@ -52,28 +52,13 @@
                 <div class="row">
                     <div class="col">
                         <div class="inner-success">
-                            <h2>Order Success</h2>
+                            <h2>Donation Form</h2>
                             <div class="inner-input">
                                 <label>Donate to</label>
                                 <input type="text" class="form-control" name="name">
                             </div>
                             <div class="wc-amount">
                                 <p>Pick a donation amount</p>
-                                <!-- <a href="#">
-                                    <p>$ 25</p>
-                                </a>
-                                <a href="#">
-                                    <p>$ 50</p>
-                                </a>
-                                <a href="#">
-                                    <p>$ 100</p>
-                                </a>
-                                <a href="#">
-                                    <p>$ 1000</p>
-                                </a>
-                                <a href="#">
-                                    <p>custom amount</p>
-                                </a> -->
                                 <ul>
                                     <li>
                                         <input type="radio" id="f-option" name="selector">
@@ -103,11 +88,13 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <input type="radio" id="p-option" name="selector">
-                                        <label for="p-option">custom amount</label>
+                                        <input type="radio" id="custom_amount" name=" selector">
+                                        <label for="custom_amount">custom amount</label>
                                         <div class="check">
                                             <div class="inside"></div>
                                         </div>
+                                        <input type="text" class="form-control" id="custom_amount_input"
+                                            placeholder="Enter custom amount" style="display: none;">
                                     </li>
 
 
@@ -126,8 +113,7 @@
                             </div>
                             <div class="donation-information">
                                 <h3>Donation Information</h3>
-                                <input type="text" class="form-control" name="name" placeholder="Name">
-                                <input type="text" class="form-control" name="name" placeholder="Last Name">
+                                <input type="text" class="form-control" name="name" placeholder="Full Name">
                                 <input type="email" class="form-control" name="Your email" placeholder="Email">
                                 <div class="select-box">
                                     <div class="custom-select">
@@ -151,7 +137,6 @@
                                             <option value="Goa">America</option>
                                         </select>
                                     </div>
-                                    <input type="text" class="form-control" name="name" placeholder="Zip code">
                                 </div>
                                 <h3>Payment method</h3>
                                 <div class="custom-select google">
@@ -177,3 +162,12 @@
 </body>
 
 </html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#custom_amount').on('click', function(e) {
+        $('#custom_amount_input').show();
+    });
+});
+</script>

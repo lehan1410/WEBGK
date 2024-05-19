@@ -2,15 +2,14 @@
     session_start();
     ob_start();
 
-    include "..\model\connect.php";
-    include "..\model\user.php";
+    include "../models/connect.php";
+    include "../models/user.php";
     if((isset($_POST['login'])) && ($_POST['login'])){
         $email = $_POST['email'];
         $pass = $_POST['pass'];
         $result = checkUser($email, $pass);
         if ($result==TRUE) {
-          
-            header('Location: \WEBGK\index.php');
+            header('Location: /WEBGK/index.php');
         }else {
             $txt_error = "Incorrect email or password.";
         }

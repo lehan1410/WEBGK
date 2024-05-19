@@ -23,7 +23,7 @@ if((isset($_POST['send'])) && ($_POST['send'])){
         $txt_error = "Invalid email format";
     }else {
         if ($result==TRUE) {
-            header('Location: \WEBGK\about-us.php');
+            header('Location: \WEBGK\view\about-us.php');
         }else {
             $txt_error = "Please enter complete information.";
         }
@@ -237,10 +237,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <input type=" text" class="form-control" name="number" placeholder="Phone">
                                     <input type="text" class="form-control" name="subject" placeholder="Subject">
                                 </div>
-                                <textarea class="form-control" placeholder="Message"></textarea>
+                                <textarea class="form-control" name="message" placeholder="Message"></textarea>
                                 <?php
                                 if(isset($txt_error) && $txt_error!=""){
-                                    echo "<p style='color: red; padding-bottom: 10px;'>".$txt_error."</p>";
+                                    echo "<p style='color: red; padding-bottom: 15px;'>".$txt_error."</p>";
                                 }
                                 ?>
                                 <div class="contact-form-button">

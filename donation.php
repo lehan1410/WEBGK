@@ -12,6 +12,9 @@ function checkForm($name, $email, $number, $subject, $message ){
 }
 session_start();
 ob_start();
+include "./models/connect.php";
+include "./models/donationModel.php";
+
 if((isset($_POST['send'])) && ($_POST['send'])){
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -23,7 +26,7 @@ if((isset($_POST['send'])) && ($_POST['send'])){
         $txt_error = "Invalid email format";
     }else {
         if ($result=='TRUE') {
-            header('Location: \WEBGK\donation.php');
+            header('Location: \WEBGK\view\donation.php');
         }else {
             $txt_error = "Please enter complete information.";
         }
@@ -31,8 +34,21 @@ if((isset($_POST['send'])) && ($_POST['send'])){
     
 }
 
-
-
+if(isset($_POST['donate']) && $_POST['donate']) {
+    $first_name = $_POST['fname'];
+    $last_name = $_POST['lname'];
+    $email = $_POST['email'];
+    $donation_amount = $_POST['donation_amount'];
+    $result = donate($first_name, $last_name, $email, $donation_amount);
+    if ($result==TRUE) {
+            header('Location: \WEBGK\view\donation-success.php');
+        }
+    }
+    else {
+        echo "Donation Failed.";
+    
+}
+   
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -115,49 +131,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="page">
             <!-- <===== Start-Donation-section =====> -->
             <div class="container">
-                <div class="donation-box">
-                    <h2>Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco </h2>
-                    <div class="donation">
-                        <img src="images/donation-2.png" alt="../">
-                        <div class="donation1">
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                                veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit
-                            </p>
-                            <h3>Donation an any amount</h3>
-                            <div class="button">
-                                <span>$</span>
-                                <input type="text" class="form-control" name="name" placeholder="25">
+                <form method="POST" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <div class="donation-box">
+                        <h2>Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco </h2>
+                        <div class="donation">
+                            <img src="images/donation-2.png" alt="../">
+                            <div class="donation1">
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                    doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                                    veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit
+                                </p>
+                                <h3>Donation an any amount</h3>
+                                <div class="button">
+                                    <span>$</span>
+                                    <input type="text" class="form-control" name="donation_amount" id="donation_amount"
+                                        placeholder="25">
+                                </div>
+                                <h4>Select Payment Method</h4>
+                                <label class="Radio">
+                                    <input type="radio" name="position_of_interest" value="Radio Field">
+                                    <span class="list-item-label">Test Donation</span>
+                                </label>
+                                <label class="Radio">
+                                    <input type="radio" name="position_of_interest" value="Radio Field">
+                                    <span class="list-item-label">Offline donation</span>
+                                </label>
+                                <label class="Radio">
+                                    <input type="radio" name="position_of_interest" value="Radio Field">
+                                    <span class="list-item-label">Credit Card</span>
+                                </label>
                             </div>
-                            <h4>Select Payment Method</h4>
-                            <label class="Radio">
-                                <input type="radio" name="position_of_interest" value="Radio Field">
-                                <span class="list-item-label">Test Donation</span>
-                            </label>
-                            <label class="Radio">
-                                <input type="radio" name="position_of_interest" value="Radio Field">
-                                <span class="list-item-label">Offline donation</span>
-                            </label>
-                            <label class="Radio">
-                                <input type="radio" name="position_of_interest" value="Radio Field">
-                                <span class="list-item-label">Credit Card</span>
-                            </label>
+                        </div>
+                        <div class="personal-info" id="c">
+                            <h4>Personal info</h4>
+                            <div class="info">
+                                <input type="text" class="form-control" name="fname" placeholder="First name">
+                                <input type="text" class="form-control" name="lname" placeholder="Last name">
+                            </div>
+                            <input type="email" class="form-control" name="email" placeholder="Email Address">
+                            <div class="btn-text" id="donation_total" name="donation_total">Donation Total: </div>
+                            <button class="donate_button" type="submit" id="donate-button" name="donate">Donate</button>
                         </div>
                     </div>
-                    <div class="personal-info" id="c">
-                        <h4>Personal info</h4>
-                        <div class="info">
-                            <input type="text" class="form-control" name="fname" placeholder="First name">
-                            <input type="text" class="form-control" name="lname" placeholder="Last name">
-                        </div>
-                        <input type="email" class="form-control" name="email" placeholder="Email Address">
-                        <div class="btn-text">Donation Total: 25</div>
-                        <!-- <button class="wc-btn" type="submit" id="submit">Donate</button> -->
-                        <div class="wc-btn"><a href="#" class="btn btn-primary" type="submit">Donate</a></div>
-                    </div>
-                </div>
+                </form>
                 <div class="donation-wrapper">
                     <div class="donation-content">
                         <div class="donation-content-p">
@@ -288,3 +306,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#donation_amount').on('input', function() {
+        var donationAmount = $(this).val();
+        $('#donation_total').text('Donation Total: ' + donationAmount);
+    });
+});
+</script>

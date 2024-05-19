@@ -3,8 +3,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-require '../WEBGK/vendor/phpmailer/phpmailer/src/SMTP.php';
-require '../WEBGK/vendor/autoload.php'; 
+require './vendor/phpmailer/phpmailer/src/SMTP.php';
+require './vendor/autoload.php'; 
 function checkUser($email, $pass) {
     $conn = get_connection();
     $stmt = $conn->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
@@ -14,15 +14,24 @@ function checkUser($email, $pass) {
     $rowCount = $result->num_rows;
     return $rowCount > 0;
 }
-function getName($email){
+function getName($email) {
     $conn = get_connection();
     $stmt = $conn->prepare("SELECT name FROM user WHERE email = ?");
-    $stmt->bind_param("s", $email); // Bind the $email parameter, not $name
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $data = $result->fetch_assoc();
-    return $data;
-}   
+    if (!$stmt) {
+        echo "Error preparing statement: " . $conn->error;
+        return false; 
+    }
+    $stmt->bind_param("s", $email); 
+    if (!$stmt->execute()) {
+        echo "Error executing statement: " . $stmt->error;
+        return false; 
+    }
+    $result = $stmt->get_result(); 
+    $data = $result->fetch_assoc(); 
+    $stmt->close(); 
+    $conn->close(); 
+    return $data['name'];
+}
 function checkUser1($name, $email) {
     $conn = get_connection();
     $stmt = $conn->prepare("SELECT * FROM user WHERE name = ?  AND email = ?");
@@ -88,5 +97,13 @@ function checkUser4($pass1, $code) {
         return TRUE;
     }
     return FALSE;
-}   
+}
+function donate($first_name, $last_name, $email, $donation_amount) {
+    $conn = get_connection();
+    $stmt = $conn->prepare("INSERT INTO donation (first_name, last_name, email, donation_total) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("sssd",$first_name, $last_name, $email, $donation_amount);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
+}
 ?>

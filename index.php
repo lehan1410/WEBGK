@@ -37,25 +37,23 @@
                     </li>
                 </ul>
                 <div class="donation">
-                    <!-- <?php
-                        // Start the session
-                        session_start();
-                        require "model/connect.php";
-                        require "model/user.php";
-                        if(isset($_SESSION["data"])) {
-                            $email = $_SESSION["data"]["email"];
-                            $name = $_SESSION["data"]["name"];
-                            $result = getName($email);
-                            if($result==TRUE){
-                                echo 'Welcome, '.$name;
-                            }
-                            else{
-                                echo 'You are not logged in.';
-                            }
-                        }
-                    ?> -->
+                    <a href="donation.php" class="">Donate</a>
                 </div>
             </nav>
+            <!-- .navbar -->
+            <!-- <div class="">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="../"></a>
+                </div>
+            </div>
+            <div class="">
+                <div class="">
+                    <a href="javascript:;" class="mobile-nav-toggle"><i class="fa fa-bars"></i><i class="fa fa-xmark"></i></a>
+                </div>
+                <div class="">
+                    <a href="donation.html" class="btn btn-primary">Donate</a>
+                </div>
+            </div> -->
         </div>
     </header>
     <!-- End Header -->
@@ -68,7 +66,8 @@
                     <h1>The Happiness is Giving it Away</h1>
                     <div>
                         <a>Get help now</a>
-                        <button data-video="https://www.youtube.com/watch?v=kOISEM6L4xk">Watch Video</button>
+                        <a style="text-decoration:none" href="https://www.youtube.com/watch?v=kOISEM6L4xk">Watch
+                            Video</a>
                     </div>
                 </div>
                 <div>
@@ -82,18 +81,21 @@
             <section class="about-us" style="background-color: #FFF8F8;">
                 <div class="container">
                     <div class="">
-                        <h2 class="title">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,
+                        <h2 class="title">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+                            tempore,
                             cum soluta nobis est eligendi optio </h2>
                     </div>
                     <div class="">
                         <div class="about-content">
                             <div>
                                 <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                                    anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators
+                                    anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+                                    generators
                                     on the Internet tend to repeat predefined chunks as necessary,
                                     making this the first true generator on the Inte</p>
                                 <br>
-                                <P>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                <P>There are many variations of passages of Lorem Ipsum available, but the majority
+                                    have
                                     suffered alteration in some form, by injected humour, or randomised words which
                                     don't look even slightly believable. If you are going
                                     to use a passage of Lorem Ipsum, you need to be sure there isn't anything
@@ -118,7 +120,8 @@
 
                     <div class="">
                         <h2>Help me write</h2>
-                        <P>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut
+                        <P>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
+                            ut
                             et voluptates repudiandae sint et molestiae non recusandae. </P>
                     </div>
 
@@ -135,13 +138,18 @@
                                 voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
                                 occaecati cupiditate non provident, similique sunt in
                                 culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</P>
-                            <P>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta
-                                nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere
-                                possimus, <span>omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-                                    quibusdam </span> et aut officiis debitis aut rerum necessitatibus saepe eveniet ut
+                            <P>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
+                                soluta
+                                nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat
+                                facere
+                                possimus, <span>omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
+                                    autem
+                                    quibusdam </span> et aut officiis debitis aut rerum necessitatibus saepe eveniet
+                                ut
                                 et voluptates repudiandae
                             </P>
-                            <P>Sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut
+                            <P>Sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
+                                ut
                                 aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
                                 asperiores repellat
                             </P>
@@ -177,7 +185,8 @@
                                 <p class="date">10 jun,2022</p>
                                 <a href="news-details.php"><i class="fas fa-arrow-right"></i></a>
                             </div>
-                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut
+                                    aut
                                     reiciendis </a>
                             </h2>
                         </div>
@@ -186,7 +195,8 @@
                                 <p class="date">10 jun,2022</p>
                                 <a href="news-details.php"><i class="fas fa-arrow-right"></i></a>
                             </div>
-                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut
+                                    aut
                                     reiciendis </a>
                             </h2>
                         </div>
@@ -195,7 +205,8 @@
                                 <p class="date">10 jun,2022</p>
                                 <a href="news-details.php"><i class="fas fa-arrow-right"></i></a>
                             </div>
-                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut
+                                    aut
                                     reiciendis </a>
                             </h2>
                         </div>
@@ -204,7 +215,8 @@
                                 <p class="date">10 jun,2022</p>
                                 <a href="news-details.php"><i class="fas fa-arrow-right"></i></a>
                             </div>
-                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                            <h2><a href="news-details.php">Itaque earum rerum hic tenetur a sapiente delectus, ut
+                                    aut
                                     reiciendis</a>
                             </h2>
                         </div>

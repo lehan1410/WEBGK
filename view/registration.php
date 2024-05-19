@@ -18,7 +18,7 @@
                 $stmt = $conn->prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?)");
                 $stmt->bind_param("sss", $name, $email, $pass1);
                 $stmt->execute();
-                header('Location: /view\login.php');
+                header('Location: /view/login.php');
             }else {
                 $txt_error = "Incorrect username or password.";
             }
