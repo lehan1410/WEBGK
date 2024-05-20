@@ -171,13 +171,36 @@ body {
     font-family: 'Font Awesome 5 Pro';
     margin-left: 6px;
 }
-.navbar .donation {
+
+.navbar .wc-btn .btn {
+    padding: 10px 20px 6px;
+    font-family: 'Axiforma';
+    font-weight: 400 !important;
     margin-right: 60px;
-    padding: 10px 30px 10px;
-    background-color: #cfff8d;
+}
+
+.navbar .wc-btn .btn-primary {
+    color: #000 !important;
+    background: #CFFF8D;
     border-radius: 20px;
 }
 
+.transperent .navbar .wc-btn .btn-primary:hover {
+    color: #fff !important;
+    border: 2px solid #CFFF8D;
+}
+
+.navbar .wc-btn .btn-primary:hover {
+    color: #000 !important;
+    border: 2px solid #000000;
+    background-color: transparent !important;
+}
+
+.navbar .wc-btn .btn-primary:active,
+.navbar .wc-btn .btn-primary:focus {
+    background-color: transparent;
+    border-color: #000000;
+}
 /* dropdown */
 .navbar .dropdown ul {
     display: block;
@@ -204,10 +227,6 @@ body {
     border-left: 3px solid #4c5e57;
 }
 
-.navbar .donation:hover {
-    background-color: white;
-    border: 2px solid black;
-}
 
 .main-wrapper{
     margin-top: 100px;

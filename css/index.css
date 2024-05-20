@@ -150,11 +150,11 @@ body {
     margin-right: 60px;
 }
 
-.navbar .wc-btn .btn-primary {
+/* .navbar .wc-btn .btn-primary {
     color: #000 !important;
     background: #CFFF8D;
     border-radius: 20px;
-}
+} */
 
 .transperent .navbar .wc-btn .btn-primary:hover {
     color: #fff !important;

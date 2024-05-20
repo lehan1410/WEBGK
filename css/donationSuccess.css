@@ -128,16 +128,7 @@ h6 {
     margin-left: 6px;
 }
 
-.navbar .donation {
-    margin-right: 60px;
-    padding: 10px 30px 10px;
-    background-color: #cfff8d;
-    border-radius: 20px;
-}
-.navbar .donation:hover {
-    background-color: white;
-    border: 2px solid black;
-}
+
 .transperent header#header .navbar a:hover {
     color: #CFFF8D;
 }
@@ -155,10 +146,13 @@ h6 {
     padding: 10px 30px 6px;
     font-family: 'Axiforma';
     font-weight: 400 !important;
+    margin-right: 60px;
 }
 
 .navbar .wc-btn .btn-primary {
     color: #000 !important;
+    background: #CFFF8D;
+    border-radius: 20px;
 }
 
 .transperent .navbar .wc-btn .btn-primary:hover {
@@ -177,7 +171,6 @@ h6 {
     background-color: transparent;
     border-color: #000000;
 }
-
 .navbar ul li a:hover {
     color: #006662;
     transition: all .4s;
@@ -303,12 +296,15 @@ h6 {
     padding-bottom: 12px;
     font-family: 'Creato Display';
     font-weight: 600;
+    text-align: center;
+    padding-right: 30px;
 }
 
 .donation-success .payment-tabel .payment-tabel-success table td {
     padding-top: 16px;
     color: #7F7F7F;
-    font-family: 'Creato Display';
-    font-size: 100px;
+    font-family: 'arial, sans-serif';
+    font-size: 30px;
     padding-right: 30px;
+    text-align: center;
 }

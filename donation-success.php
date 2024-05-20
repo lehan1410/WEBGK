@@ -47,10 +47,9 @@
                 </ul>
                 <div class="wc-btn">
                     <?php if ($logged_in) : ?>
-                    <div class="logged-in-user">
-                        <span>Welcome, <?php echo $user_name; ?></span><a href="/WEBGK/view/logout.php"
-                            class="btn btn-primary">Logout</a>
-
+                    <div class="logged-in-user" style="display:flex">
+                        <a style="margin-left:30px" href="/WEBGK/view/logout.php" class="btn btn-primary">Logout</a>
+                        <p style="margin-right:30px;"><strong> Welcome, <?php echo $user_name; ?>!</p>
                     </div>
                     <?php else : ?>
                     <div class="wc-btn">
@@ -143,26 +142,28 @@
                         <div class="payment-tabel-success">
                             <table>
                                 <tr>
-                                    <th>Full name</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
+                                    <th style="padding: right 20px;">Full name</th>
+                                    <th style="padding: right 20px;">Amount</th>
+                                    <th style="padding: right 20px;">Payment Method</th>
+                                    <th style="padding: right 20px;">Date</th>
                                 </tr>
                                 <?php
                                 if(isset($recentDonations) && !empty($recentDonations)){
                                     foreach ($recentDonations as $donation) {
                                         echo '<tr>';
-                                        echo '<td>' . $donation['first_name'] . ' ' . $donation['last_name'] . '</td>';
-                                        echo '<td>' . $donation['donation_total'] . '</td>';
-                                        echo '<td>' . $donation['donation_total'] . '</td>';
+                                        echo '<td style="text-align:center">' . $donation['first_name'] . ' ' . $donation['last_name'] . '</td>';
+                                        echo '<td style="text-align:center">' . $donation['donation_total'] . '</td>';
+                                        echo '<td style="text-align:center">' . $donation['payment_method'] . '</td>';
+                                        echo '<td style="text-align:center">' . $donation['dateDo'] . '</td>';
                                         echo '</tr>';
-                                    }
+                                        }
                                 }
                                 else{
                                     echo '<tr>';
                                     echo '<td style="text-align:center" colspan="3">No recent donations</td>';
                                     echo '</tr>';
                                 }
-                                
+
                                 ?>
                             </table>
                         </div>

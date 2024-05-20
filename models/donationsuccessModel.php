@@ -1,7 +1,7 @@
 <?php
 function getDonation($email) {
     $conn = get_connection();
-    $stmt = $conn->prepare("SELECT * FROM donation WHERE email = ? LIMIT 1");
+    $stmt = $conn->prepare("SELECT * FROM donation WHERE email = ? ORDER BY donation_id DESC LIMIT 1");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -12,7 +12,7 @@ function getDonation($email) {
 }
 function getRecentDonations($limit = 10) {
     $conn = get_connection();
-    $stmt = $conn->prepare("SELECT * FROM donation ORDER BY created_at DESC LIMIT ?");
+    $stmt = $conn->prepare("SELECT *, date(created_at) as dateDo FROM donation ORDER BY created_at DESC LIMIT ?");
     $stmt->bind_param("i", $limit);
     $stmt->execute();
     $result = $stmt->get_result();

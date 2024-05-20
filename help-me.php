@@ -60,7 +60,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Content
         $mail->isHTML(true);                                  
         $mail->Subject = 'Confirmation of Contact Form Submission';
-        $mail->Body    = "Dear $name,<br><br>Thank you for your submission.<br><br>Best regards,<br>Group 11";
+        $mail->Body = "
+        <html>
+        <head>
+        <style>
+        body {font-family: Arial, sans-serif;}
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fafafa;
+        }
+        .header {
+            background-color: #769593; /* Change to a fresh green color */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .content {
+            padding: 30px;
+            color: #333;
+        }
+        .footer {
+            background-color: #769593; /* Change to a fresh green color */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 1px solid #ddd;
+        }
+        </style>
+        </head>
+        <body>
+        <div class='container'>
+            <div class='header'>
+                <h2>Thank You for Your Contact</h2>
+            </div>
+            <div class='content'>
+                <p>Dear $name,</p>
+                <p>Thank you for your recent submission to our organization. We appreciate the time and effort you have put into this. Our team will review your submission and get back to you as soon as possible.</p>
+                <p>In the meantime, if you have any questions or need further assistance, please do not hesitate to contact us.</p>        </div>
+            <div class='footer'>
+                Best regards,<br>Group 11
+            </div>
+        </div>
+        </body>
+        </html>";
         $mail->send();
     } catch (Exception $e) {
         echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
@@ -105,10 +154,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </ul>
                 <div class="wc-btn">
                     <?php if ($logged_in) : ?>
-                    <div class="logged-in-user">
-                        <span>Welcome, <?php echo $user_name; ?></span><a href="/WEBGK/view/logout.php"
-                            class="btn btn-primary">Logout</a>
-
+                    <div class="logged-in-user" style="display:flex">
+                        <a style="margin-right:30px" href="/WEBGK/view/logout.php" class="btn btn-primary">Logout</a>
+                        <p style="margin-right:30px;"><strong> Welcome, <?php echo $user_name; ?>!</p>
                     </div>
                     <?php else : ?>
                     <div class="wc-btn">

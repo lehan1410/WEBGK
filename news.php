@@ -43,10 +43,9 @@ $logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
                 </ul>
                 <div class="wc-btn">
                     <?php if ($logged_in) : ?>
-                    <div class="logged-in-user">
-                        <span>Welcome, <?php echo $user_name; ?></span><a href="/WEBGK/view/logout.php"
-                            class="btn btn-primary">Logout</a>
-
+                    <div class="logged-in-user" style="display:flex">
+                        <a style="margin-left:30px" href="/WEBGK/view/logout.php" class="btn btn-primary">Logout</a>
+                        <p style="margin-right:30px;"><strong> Welcome, <?php echo $user_name; ?>!</p>
                     </div>
                     <?php else : ?>
                     <div class="wc-btn">
