@@ -1,7 +1,7 @@
 <?php
 function getDonation($email) {
     $conn = get_connection();
-    $stmt = $conn->prepare("SELECT * FROM donation WHERE email = ?");
+    $stmt = $conn->prepare("SELECT * FROM donation WHERE email = ? LIMIT 1");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();

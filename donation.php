@@ -14,6 +14,7 @@ session_start();
 ob_start();
 
 $user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
+print_r($_SESSION['name']);
 $logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
 
 include "./models/connect.php";
