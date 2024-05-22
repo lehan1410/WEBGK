@@ -13,6 +13,7 @@ INSERT INTO `user` (`name`, `email`, `password`) VALUES
 ('kiet_chung', '52200140@student.tdtu.edu.vn', '123456'),
 ('Lê Hân', '52200155@student.tdtu.edu.vn', '123456');
 
+
 CREATE TABLE `donation` (
   `donation_id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,

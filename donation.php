@@ -7,9 +7,16 @@ require 'vendor/autoload.php';
 function checkForm($name, $email, $number, $subject, $message ){
     if(empty($name) || empty($email) || empty($number) || empty($subject) || empty($message)){
         echo '<script>alert("Please enter complete information.")</script>';
-        return false; // Some fields are empty
+        return false;
     }
-    return true; // All fields are filled
+    return true; 
+}
+function checkForm1($first_name, $last_name, $email, $donation_amount, $payment_method){
+    if(empty($first_name) || empty($last_name) || empty($email) || empty($donation_amount) || empty($payment_method)){
+        echo '<script>alert("Please enter complete information.")</script>';
+        return false;
+    }
+    return true; 
 }
 session_start();
 ob_start();
@@ -40,78 +47,93 @@ if((isset($_POST['send'])) && ($_POST['send'])){
     
 }
 
+
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['donate'])) {
-    $first_name = $_POST['fname'];
-    $last_name = $_POST['lname'];
-    $email = $_POST['email'];
-    $donation_amount = $_POST['donation_amount'];
-    $payment_method = $_POST['payment_method'];
-    $result = checkUser($email);
-    if ($result==TRUE) {
-        $result1 = donate($first_name, $last_name, $email, $donation_amount, $payment_method);
-        if ($result1==TRUE) {
-            header('Location: /WEBGK/donation-success.php');
+    if(empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['email']) || empty($_POST['donation_amount']) || empty($_POST['payment_method'])) {
+        echo '<script>alert("Please enter complete information.")</script>';
+    } else {
+        $first_name = $_POST['fname'];
+        $last_name = $_POST['lname'];
+        $email = $_POST['email'];
+        $donation_amount = $_POST['donation_amount'];
+        $payment_method = $_POST['payment_method'];
+        $result = checkUser($email);
+        if ($result==TRUE) {
+            $result1 = donate($first_name, $last_name, $email, $donation_amount, $payment_method);
+            if ($result1==TRUE) {
+                header('Location: /WEBGK/donation-success.php');
+            }
+            else {
+                echo '<script>alert("Donation failed.")</script>';
+            }
         }
         else {
-            echo '<script>alert("Donation failed.")</script>';
+            echo '<script>alert("User not found.")</script>';
         }
     }
-    else {
-        echo '<script>alert("User not found.")</script>';
-    }
 }
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['donate'])) {
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['donate'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $name = $fname . ' ' . $lname;
     $email = $_POST['email'];
     $mail = new PHPMailer();
     try {
-        //Server settings
-        $mail->SMTPDebug = 0;                                 
-        $mail->isSMTP();                                      
-        $mail->Host = 'smtp.gmail.com';  
-        $mail->SMTPAuth = true;                               
-        $mail->Username = '52200155@student.tdtu.edu.vn';                 
-        $mail->Password = 'eags pwty jjij hsuq';                           
-        $mail->SMTPSecure = 'tls';                            
-        $mail->Port = 587;                                    
+    //Server settings
+    $mail->SMTPDebug = 0;
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = '52200155@student.tdtu.edu.vn';
+    $mail->Password = 'eags pwty jjij hsuq';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
 
-        //Recipients
-        $mail->setFrom('52200155@student.tdtu.edu.vn', 'WEBGK-N11');
-        $mail->addAddress($email, $name);     
+    //Recipients
+    $mail->setFrom('52200155@student.tdtu.edu.vn', 'WEBGK-N11');
+    $mail->addAddress($email, $name);
 
-        //Content
-        $mail->isHTML(true);                                  
-        $mail->Subject = 'Confirmation of Donation Form Submission';
-        
-        $mail->Body = "
-        <html>
-        <head>
+    //Content
+    $mail->isHTML(true);
+    $mail->Subject = 'Confirmation of Donation Form Submission';
+
+    $mail->Body = "
+    <html>
+
+    <head>
         <style>
-        body {font-family: Arial, sans-serif;}
+        body {
+            font-family: Arial, sans-serif;
+        }
+
         .container {
             width: 600px;
             margin: 0 auto;
             border: 1px solid #ddd;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             overflow: hidden;
             background-color: #fafafa;
         }
+
         .header {
-            background-color: #769593; /* Change to a fresh green color */
+            background-color: #769593;
+            /* Change to a fresh green color */
             color: white;
             padding: 30px;
             text-align: center;
             border-bottom: 1px solid #ddd;
         }
+
         .content {
             padding: 30px;
             color: #333;
         }
+
         .footer {
-            background-color: #769593; /* Change to a fresh green color */
+            background-color: #769593;
+            /* Change to a fresh green color */
             color: white;
             padding: 30px;
             text-align: center;
@@ -119,28 +141,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['donate'])) {
             border-top: 1px solid #ddd;
         }
         </style>
-        </head>
-        <body>
+    </head>
+
+    <body>
         <div class='container'>
             <div class='header'>
                 <h2>Thank You for Your Donation</h2>
             </div>
             <div class='content'>
                 <p>Dear <strong>$name</strong>,</p>
-                <p>Thank you for your generous donation to the <strong style='color: red;'>Dona11 Organization</strong>.<br> Your support helps us continue our mission and reach our goals. We greatly appreciate your contribution and look forward to your continued support in the future.</p>            </div>
+                <p>Thank you for your generous donation to the <strong style='color: red;'>Dona11 Organization</strong>.<br>
+                    Your support helps us continue our mission and reach our goals. We greatly appreciate your contribution
+                    and look forward to your continued support in the future.</p>
+            </div>
             <div class='footer'>
                 <strong>Best regards,<br>Group 11</strong>
             </div>
         </div>
-        </body>
-        </html>";
-        $mail->send();
+    </body>
+
+    </html>";
+    $mail->send();
     } catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
     }
-}
+    }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send'])) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $mail = new PHPMailer();
@@ -164,53 +191,67 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send'])) {
     $mail->Subject = 'Confirmation of Contact Form Submission';
     $mail->Body = "
     <html>
+
     <head>
-    <style>
-    body {font-family: Arial, sans-serif;}
-    .container {
-        width: 600px;
-        margin: 0 auto;
-        border: 1px solid #ddd;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        border-radius: 10px;
-        overflow: hidden;
-        background-color: #fafafa;
-    }
-    .header {
-        background-color: #769593; /* Change to a fresh green color */
-        color: white;
-        padding: 30px;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-    }
-    .content {
-        padding: 30px;
-        color: #333;
-    }
-    .footer {
-        background-color: #769593; /* Change to a fresh green color */
-        color: white;
-        padding: 30px;
-        text-align: center;
-        font-size: 12px;
-        border-top: 1px solid #ddd;
-    }
-    </style>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fafafa;
+        }
+
+        .header {
+            background-color: #769593;
+            /* Change to a fresh green color */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .content {
+            padding: 30px;
+            color: #333;
+        }
+
+        .footer {
+            background-color: #769593;
+            /* Change to a fresh green color */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 1px solid #ddd;
+        }
+        </style>
     </head>
+
     <body>
-    <div class='container'>
-        <div class='header'>
-            <h2>Thank You for Your Contact</h2>
+        <div class='container'>
+            <div class='header'>
+                <h2>Thank You for Your Contact</h2>
+            </div>
+            <div class='content'>
+                <p>Dear $name,</p>
+                <p>Thank you for your recent submission to our organization. We appreciate the time and effort you have put
+                    into this. Our team will review your submission and get back to you as soon as possible.</p>
+                <p>In the meantime, if you have any questions or need further assistance, please do not hesitate to contact
+                    us.</p>
+            </div>
+            <div class='footer'>
+                Best regards,<br>Group 11
+            </div>
         </div>
-        <div class='content'>
-            <p>Dear $name,</p>
-            <p>Thank you for your recent submission to our organization. We appreciate the time and effort you have put into this. Our team will review your submission and get back to you as soon as possible.</p>
-            <p>In the meantime, if you have any questions or need further assistance, please do not hesitate to contact us.</p>        </div>
-        <div class='footer'>
-            Best regards,<br>Group 11
-        </div>
-    </div>
     </body>
+
     </html>";
     $mail->send();
     } catch (Exception $e) {
@@ -325,7 +366,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send'])) {
                         </div>
                     </div>
                 </form>
-                <div class="donation-wrapper">
+                <div class=" donation-wrapper">
                     <div class="donation-content">
                         <div class="donation-content-p">
                             <p>If you are going to use a passage
@@ -466,3 +507,12 @@ $(document).ready(function() {
     });
 });
 </script>
+<!-- <script>
+function checkLogin() {
+    <?php if(!isset($_SESSION['loggedin'])): ?>
+    alert("Please log in first.");
+    window.location.href = '/WEBGK/view/login.php'; // Redirect to login page
+    event.preventDefault(); // Prevent the form from submitting
+    <?php endif; ?>
+}
+</script> -->

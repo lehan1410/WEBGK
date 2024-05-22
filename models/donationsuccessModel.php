@@ -12,7 +12,7 @@ function getDonation($email) {
 }
 function getRecentDonations($limit = 10) {
     $conn = get_connection();
-    $stmt = $conn->prepare("SELECT *, date(created_at) as dateDo FROM donation ORDER BY created_at DESC LIMIT ?");
+    $stmt = $conn->prepare("SELECT *, DATE_FORMAT(created_at, '%d-%m-%Y') as dateDo FROM donation ORDER BY created_at DESC LIMIT ?");
     $stmt->bind_param("i", $limit);
     $stmt->execute();
     $result = $stmt->get_result();
