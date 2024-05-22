@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <li><a class="one" href="donation.php">Donation</a></li>
                     <li><a class="one" href="news.php">News</a></li>
                     <li class="dropdown one">
-                        <a href="#"><span>Pages</span> <i class="fa fa-chevron-down"></i></a>
+                        <a href="#"><span>Pages</span> </a>
                         <ul>
                             <li><a href="donation-form.php">Donation Form</a></li>
                             <li><a href="donation-success.php">Donation Success</a></li>
@@ -342,48 +342,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="faq_wrapper">
                             <div class="faq_item_dropdown">
-                                <a href="#"><span>Documetation</span><i class="fa fa-chevron-down"></i></a>
-                                <ul>
-                                    <li>
+                                <a href="#"><span>Documetation</span></a>
+
                                         <p>
                                             There are many variations of passages of Lorem Ipsum
                                             available, but the majority have suffered alteration
                                             in some form, by injected humour, or randomised
                                             words which don't look even slightly believable.
                                         </p>
-                                    </li>
 
-                                </ul>
 
                             </div>
                             <div class="faq_item_dropdown">
-                                <a href="#"><span>school necessity</span><i class="fa fa-chevron-down"></i></a>
-                                <ul>
-                                    <li>
+                                <a href="#"><span>school necessity</span></a>
+
                                         <p>
                                             There are many variations of passages of Lorem Ipsum
                                             available, but the majority have suffered alteration
                                             in some form, by injected humour, or randomised
                                             words which don't look even slightly believable.
                                         </p>
-                                    </li>
-
-                                </ul>
 
                             </div>
                             <div class="faq_item_dropdown">
-                                <a href="#"><span>Operational cost</span><i class="fa fa-chevron-down"></i></a>
-                                <ul>
-                                    <li>
+                                <a href="#"><span>Operational cost</span></a>
                                         <p>
                                             There are many variations of passages of Lorem Ipsum
                                             available, but the majority have suffered alteration
                                             in some form, by injected humour, or randomised
                                             words which don't look even slightly believable.
                                         </p>
-                                    </li>
 
-                                </ul>
 
                             </div>
 

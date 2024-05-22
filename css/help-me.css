@@ -54,11 +54,10 @@
 }
 
 
-
 body {
-    background-color: #ffffff;
     font-family: 'Axiforma';
     display: flex;
+    margin: 0;
 }
 
 h1,
@@ -80,16 +79,20 @@ body {
     row-gap: 90px;
 }
 
-
 #header {
-    height: 100px;
+    margin-top: 0px;
     position: fixed;
-    left: 0;
+    width: 100%;
+    background-color: white;
+    /* padding-bottom: 15px; */
+    opacity: 0.9;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
     top: 0;
+    left: 0;
     right: 0;
-    z-index: 997;
-    background-color: #ffffff;
-    transition: all .4s;
+    height: 80px;
+    z-index: 999;
+    background: #ffffff;
 }
 
 .logo {
@@ -104,91 +107,72 @@ body {
     padding-top: 10px;
 }
 
-.navbar ul { 
+.navbar ul {
     display: flex;
     list-style: none;
     align-items: center;
     padding-right: 20px;
+    padding-top: 10px;
 }
 
 .navbar li {
     position: relative;
     margin-right: 35px;
 }
+
 .navbar a {
+    font-size: 13px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0;
+    color: #000000;
     font-size: 16px;
     font-weight: 400;
-    color: #000;
     white-space: nowrap;
     transition: 0.3s;
     text-decoration: none;
     font-family: 'Creato Display';
 }
 
-.one {
-    color: #000;
+.navbar>ul>li>a {
+    color: #000000;
 }
 
 .navbar a i {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     font-family: 'Font Awesome 5 Pro';
     margin-left: 6px;
 }
-.navbar .donation {
-    margin-right: 60px;
-    padding: 10px 30px 10px;
-    background-color: #cfff8d;
-    border-radius: 20px;
+
+.navbar ul a:hover{
+    color: #769593
 }
 
-.navbar a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
-    font-size: 16px;
-    font-weight: 400;
-    color: #000;
-    white-space: nowrap;
-    transition: 0.3s;
-    text-decoration: none;
-    font-family: 'Creato Display';
+.navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    padding: 10px 0;
+    visibility: hidden;
+    background: #ffffff;
+    border-radius: 9px;
+    min-width: 160px;
 }
 
-.one {
-    color: white;
+.navbar .dropdown:hover>ul {
+    visibility: visible;
 }
 
-
-
-.navbar a i {
-    font-size: 14px;
-    font-weight: 600;
-    font-family: 'Font Awesome 5 Pro';
-    margin-left: 6px;
-}
-.navbar .donation {
-    margin-right: 60px;
-    padding: 10px 30px 10px;
-    background-color: #cfff8d;
-    border-radius: 20px;
-}
-.transperent header#header .navbar a:hover {
-    color: #CFFF8D;
+.navbar li.dropdown ul li {
+    margin-right: 0;
+    padding: 8px 20px;
+    border-left: 3px solid white;
 }
 
-.navbar a:hover,
-.navbar .active,
-.navbar .active:focus,
-.navbar li:hover>a {
-    color: black;
-    background: ư;
-
+.navbar li.dropdown ul li:hover {
+    background: #cfff8d;
+    border-left: 3px solid #4b425f;
 }
 
 .navbar .wc-btn .btn {
@@ -221,42 +205,6 @@ body {
     border-color: #000000;
 }
 
-.navbar ul li a:hover {
-    color: #006662;
-    transition: all .4s;
-}
-
-/* dropdown */
-.navbar .dropdown ul {
-    display: block;
-    position: absolute;
-    padding: 10px 0;
-    visibility: hidden;
-    background: #ffffff;
-    border-radius: 9px;
-    min-width: 160px;
-}
-
-.navbar .dropdown:hover>ul {
-    visibility: visible;
-}
-
-.navbar li.dropdown ul li {
-    margin-right: 0;
-    padding: 8px 20px;
-    border-left: 3px solid white;
-}
-
-.navbar li.dropdown ul li:hover {
-    background: #cfff8d;
-    border-left: 3px solid #4c5e57;
-}
-
-.navbar .donation:hover {
-    /* background-color: white; */
-    border: 2px solid black;
-}
-
 .main-wrapper{
     margin-top: 100px;
 }
@@ -274,6 +222,49 @@ body {
     margin: 0;
 }
 
+p{
+    font-size: 16px;
+    color: #7F7F7F;
+    line-height: 26px;
+    font-weight: 400;
+    font-family: 'Creato Display';
+}
+a{
+    text-decoration: none;
+}
+/* .wc-help-me-wrapper{
+    padding: 45px;
+} */
+.wc-help-me .wc-story-info {
+    padding: 50px;
+
+}
+.wc-help-me .wc-story-info h2{
+    /* text-align: center; */
+    padding-bottom: 50px;
+    font-size: 50px;
+
+}
+
+.story-wrapper {
+    display: inline-flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    align-items: center;
+}
+.story-wrapper .help-me-image {
+    max-width: 470px;
+    width: 100%;
+}
+
+
+.story-wrapper .story-content {
+    padding-left: 94px;
+    padding-top: 70px;
+    max-width: 680px;
+
+}
+
 .wc-help-me .main-help-content {
     padding-bottom: 45px;
 }
@@ -287,33 +278,26 @@ body {
 .help-me-wrapper {
     display: inline-flex;
     justify-content: space-between;
-    padding-bottom: 50px;
     align-items: center;
+    padding: 50px;
 }
 .help-me-wrapper .help-me-image {
     max-width: 470px;
     width: 100%;
+    
 }
+
 .help-me-wrapper .help-me-p {
     padding-left: 94px;
-    padding-top: 37px;
+    padding-top: 70px;
     max-width: 680px;
-}
-.wc-story-info .story-wrapper {
-    display: flex;
-    padding-bottom: 30px;
+
 }
 
-.story-content {
-    padding-left: 50px;
-    max-width: 567px;
-}
 
-.wc-story-info h3 {
-    font-size: 20px;
-    padding-bottom: 15px;
+.main-help-content{
+    padding: 40px;
 }
-
 .bredcum {
     background-color: #FFF8F8;
     display: flex;
@@ -329,6 +313,11 @@ body {
 
 .bredcum .bredcum-content p {
     max-width: 74%;
+    font-size: 16px;
+    color: #7F7F7F;
+    line-height: 26px;
+    font-weight: 400;
+    font-family: 'Creato Display';
 }
 
 .bredcum .btn {
@@ -348,77 +337,94 @@ body {
     border: 2px solid #000;
 }
 
-
-.as-donation {
-    padding-bottom: 120px;
-}
-
-.as-donation h2 {
-    font-size: 60px;
-    padding-bottom: 50px;
-}
-
-.as-donation .donation-content .donation-p p {
-    font-family: 'Axiforma';
-    font-weight: 400;
-    font-size: 15px;
-    max-width: 74%;
-    padding-bottom: 20px;
+.as-donation .container{
+    padding: 50px;
+    margin-top: 50px;
 }
 
 .as-donation .donation-content {
-    display: flex;
-    max-width: 1290px
+    padding-bottom: 45px;
+}
+.as-donation .donation-content h2 {
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 60px;
+
 }
 
-
-
-
-
-.faq_title.active,
-.faq_wrapper .faq_item_dropdown:hover {
-    color: #425f57;
+.donation-wrapper {
+    display: inline-flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    align-items: center;
 }
-.faq_wrapper .faq_item_dropdown ul {
-    list-style: none;
 
-    visibility: hidden;
+.donation-wrapper .donation-p{
+    max-width: 680px;
+    padding-right: 94px;
+
     
-
 }
 
-.faq_wrapper .faq_item_dropdown:hover>ul {
-    visibility: visible;
-}
-
-
-
-.faq_wrapper .faq_item_dropdown i {
-    margin-right: 1px; /* Khoảng cách giữa biểu tượng và văn bản */
-}
-.faq_wrapper .faq_item_dropdown span {
-    font-weight: bold;
+.faq_wrapper .faq_title {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
     font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    color: #000;
+    font-family: 'Axiforma';
 }
 
-.faq_wrapper .faq_item_dropdown p {
-    font-size: 14px;
-}
-.faq_wrapper .faq_item_dropdown a {
-    text-decoration: none; 
-    color: #333;
+.faq_title,
+.faq_wrapper .faq_title {
+    color: #000;
+    font-weight: 510;
 }
 
-.faq_wrapper .faq_item_dropdown a:hover {
+.faq_title,
+.faq_wrapper .faq_title:hover {
     color: #425f57;
 }
 
-
-
-.faq_wrapper {
-    margin-top: 35px;
-    width: 100%;
+.faq_wrapper .faq_item {
+    padding: 15px 15px;
+    margin: 0 auto 10px auto;
 }
+
+
+.faq_item:hover {
+    background-color: #FFF8F8;
+}
+
+.faq_title {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.faq_title::after {
+    content: "\f078";
+    font-family: FontAwesome;
+    margin-left: 5px;
+}
+
+.faq_details p {
+    display: none;
+}
+
+.faq_item.active .faq_details p,
+.faq_item:hover .faq_details p {
+    display: block;
+}
+
+
+
 
 
 /* contact */
@@ -427,12 +433,11 @@ body {
     padding: 83px 0;
     max-width: 1420px;
     margin: auto auto;
-    border-radius: 10px;
-
 }
 
 .wc-contactus {
-    padding-bottom: 120px;
+    padding: 30px;
+
 }
 
 .wc-contact .contact-title {

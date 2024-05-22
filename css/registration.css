@@ -57,18 +57,18 @@ body {
     width: 100%;
     outline: none;
     padding: 0 15px;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 400;
-    color: #333;
+    color: #666;
     border: 1.5px solid #c7bebe;
     border-bottom-width: 2.5px;
-    border-radius: 6px;
+    border-radius: 35px;
     transition: all 0.3s ease;
 }
 
 .input-box input:focus,
 .input-box input:valid {
-    border-color: #7128ee;
+    border-color: #CFFF8D;
 }
 
 form .policy {
@@ -84,19 +84,20 @@ form h3 {
 }
 
 .input-box.button input {
-    color: #fff;
+    color: #666;
     letter-spacing: 1px;
     border: none;
-    background: #425F57;
+    font-size: 16px;
+    font-weight: 600;
+    background: #CFFF8D;
     cursor: pointer;
 }
 
 .input-box.button input:hover {
-    background: #8265b3;
+    background: #425F57;
 }
 
 form .text h3 a {
-    color: #7128ee;
     text-decoration: none;
 }
 
