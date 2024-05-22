@@ -2,6 +2,6 @@
     session_start();
     unset($_SESSION["name"]);
     session_destroy();
-    header("location: \WEBGK\index.php");  
+    header("location: \index.php");  
     
 ?>

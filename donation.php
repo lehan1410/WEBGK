@@ -50,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['donate'])) {
     if ($result==TRUE) {
         $result1 = donate($first_name, $last_name, $email, $donation_amount, $payment_method);
         if ($result1==TRUE) {
-            header('Location: /WEBGK/donation-success.php');
+            header('Location: /donation-success.php');
         }
         else {
             echo '<script>alert("Donation failed.")</script>';
@@ -262,12 +262,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send'])) {
                 <div class="wc-btn">
                     <?php if ($logged_in) : ?>
                     <div class="logged-in-user" style="display:flex">
-                        <a style="margin-left:30px" href="/WEBGK/view/logout.php" class="btn btn-primary">Logout</a>
+                        <a style="margin-left:30px" href="/view/logout.php" class="btn btn-primary">Logout</a>
                         <p style="margin-right:30px;"><strong> Welcome, <?php echo $user_name; ?>!</p>
                     </div>
                     <?php else : ?>
                     <div class="wc-btn">
-                        <a href="/WEBGK/view/login.php" class="btn btn-primary">Login</a>
+                        <a href="/view/login.php" class="btn btn-primary">Login</a>
                     </div>
                     <?php endif; ?>
                 </div>

@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `Donation` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `Donation`;
+-- CREATE DATABASE IF NOT EXISTS `Donation` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+-- USE `Donation`;
 
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,

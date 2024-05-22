@@ -155,12 +155,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="wc-btn">
                     <?php if ($logged_in) : ?>
                     <div class="logged-in-user" style="display:flex">
-                        <a style="margin-right:30px" href="/WEBGK/view/logout.php" class="btn btn-primary">Logout</a>
+                        <a style="margin-right:30px" href="/view/logout.php" class="btn btn-primary">Logout</a>
                         <p style="margin-right:30px;"><strong> Welcome, <?php echo $user_name; ?>!</p>
                     </div>
                     <?php else : ?>
                     <div class="wc-btn">
-                        <a href="/WEBGK/view/login.php" class="btn btn-primary">Login</a>
+                        <a href="/view/login.php" class="btn btn-primary">Login</a>
                     </div>
                     <?php endif; ?>
                 </div>

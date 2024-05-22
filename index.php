@@ -44,12 +44,12 @@ $logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
                 <div class="wc-btn">
                     <?php if ($logged_in) : ?>
                     <div class="logged-in-user" style="display:flex">
-                        <a style="margin-left:30px" href="/WEBGK/view/logout.php" class="btn btn-primary">Logout</a>
+                        <a style="margin-left:30px" href="/view/logout.php" class="btn btn-primary">Logout</a>
                         <p style="margin-right:30px; color:#fff"> Welcome, <?php echo $user_name; ?>!</p>
                     </div>
                     <?php else : ?>
                     <div class="wc-btn">
-                        <a href="/WEBGK/view/login.php" class="btn btn-primary">Login</a>
+                        <a href="/view/login.php" class="btn btn-primary">Login</a>
                     </div>
                     <?php endif; ?>
                 </div>
@@ -79,7 +79,7 @@ $logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
                 <div class="wc-hero">
                     <h1>The Happiness is Giving it Away</h1>
                     <div>
-                        <a style="text-decoration:none" href="/WEBGK/help-me.php">Get help now</a>
+                        <a style="text-decoration:none" href="/help-me.php">Get help now</a>
                         <a style="text-decoration:none" href="https://www.youtube.com/watch?v=kOISEM6L4xk">Watch
                             Video</a>
                     </div>
@@ -115,7 +115,7 @@ $logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
                                     to use a passage of Lorem Ipsum, you need to be sure there isn't anything
                                     embarrassing hidden in the middle of text.</P>
                                 <div>
-                                    <a href="/WEBGK/about-us.php">About us</a>
+                                    <a href="/about-us.php">About us</a>
                                 </div>
                             </div>
 
@@ -188,7 +188,7 @@ $logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
                     <div class="latest-image-content">
                         <img src="images/latest.png" alt="../">
                         <p>10 jun,2022</p>
-                        <h2><a href="/WEBGK/news.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                        <h2><a href="/news.php">Itaque earum rerum hic tenetur a sapiente delectus, ut aut
                                 reiciendis
                                 voluptatibus maiores alias
                             </a>

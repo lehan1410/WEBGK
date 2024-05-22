@@ -1,12 +1,7 @@
 <?php
-    define('HOST', '127.0.0.1');
-    define('USER', 'root');
-    define('PASS', '');
-    define('DB', 'donation');
-
     function get_connection()
     {
-        $conn = new mysqli(HOST, USER, PASS, DB);
+        $conn = new mysqli('db','php_docker','password','user');
         if ($conn->connect_errno) {
             die('Connect failed with message: ' . $conn->connect_error);
         }
