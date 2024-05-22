@@ -36,7 +36,6 @@
 
 <body>
     <div class="login-form">
-        <h1>Login</h1>
         <div class="container">
             <div class="main">
                 <div class="content">
@@ -49,7 +48,7 @@
                                 echo "<p style='color: red; padding-bottom: 10px;'>".$txt_error."</p>";
                             }
                         ?>
-                        <input id="Two" class="btn" type="submit" name="login"></input>
+                        <input id="Two" class="btn" type="submit" name="login" value="Login"></input>
                         <p class="forgot"> <a href="\WEBGK\view/forgotten-pass.php">Forgotten password?</a></p>
                     </form>
                     <p class="account">Don't Have An Account? <a href="\WEBGK\view/registration.php">Register</a></p>
