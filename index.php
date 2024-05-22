@@ -44,12 +44,13 @@ $logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
                 <div class="wc-btn">
                     <?php if ($logged_in) : ?>
                     <div class="logged-in-user" style="display:flex">
-                        <a style="margin-left:30px" href="/view/logout.php" class="btn btn-primary">Logout</a>
+                        <a style="margin-left:30px;color:#fff" href="/view/logout.php"
+                            class="btn btn-primary">Logout</a>
                         <p style="margin-right:30px; color:#fff"> Welcome, <?php echo $user_name; ?>!</p>
                     </div>
                     <?php else : ?>
                     <div class="wc-btn">
-                        <a href="/view/login.php" class="btn btn-primary">Login</a>
+                        <a style="color:#fff" href="/view/login.php" class="btn btn-primary">Login</a>
                     </div>
                     <?php endif; ?>
                 </div>

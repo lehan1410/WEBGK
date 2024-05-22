@@ -8,8 +8,13 @@ include "./models/connect.php";
 include "./models/donationModel.php";
 session_start();
 
+
 $user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
 $logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
+if (!$logged_in) {
+    header('Location: /view/login.php');
+    exit;
+}
 
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['donate'])) {
     $first_name = $_POST['fname'];
@@ -276,10 +281,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </html>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('#custom_amount').on('click', function(e) {
-        $('#custom_amount_input').show();
-    });
-});
-</script>

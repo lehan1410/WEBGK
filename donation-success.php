@@ -160,7 +160,7 @@
                                 }
                                 else{
                                     echo '<tr>';
-                                    echo '<td style="text-align:center" colspan="3">No recent donations</td>';
+                                    echo '<td style="text-align:center" colspan="4">No recent donations</td>';
                                     echo '</tr>';
                                 }
 
